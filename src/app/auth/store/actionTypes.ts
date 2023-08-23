@@ -4,3 +4,5 @@ export enum ActionTypes {
   REGISTER_FAILURE = '[Auth] Register failure'
 
 }
+
+
