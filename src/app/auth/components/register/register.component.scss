@@ -1,0 +1,153 @@
+.background{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+
+}
+.form-container{
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 1.5rem;
+}
+
+
+h2{
+  text-align: center;
+  font-size: 2.5rem;
+
+}
+
+
+.error-message{
+  color: red;
+  font-size: 1.5rem;
+  min-width: 30rem;
+  max-width: 30rem;
+}
+
+.info-text{
+  min-width: 30rem;
+  max-width: 30rem;
+  font-size: 1.3rem;
+}
+
+input{
+  min-width: 30rem;
+  max-width: 30rem;
+  height: 5rem;
+  outline: none;
+  border: none;
+  padding: 1rem;
+  background-color: #5bdb99;
+  color: #fff;
+  border-left: 5px solid #000;
+  // border-radius: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+
+}
+input::placeholder{
+  color: #fff;
+}
+
+
+label{
+  min-width: 30rem;
+  max-width: 30rem;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #000;
+}
+
+.register-btn{
+  height: 5rem;
+  margin: 2rem 2rem;
+  background-color: rgb(234, 234, 234);
+  font-size: 1.8rem;
+  border: none;
+  border-left: 5px solid #5bdb99;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  transition:0.3s all;
+
+
+  &:hover{
+    background-color: rgb(234, 234, 234);
+    transition:0.3s all;
+  }
+
+}
+
+
+input.valid {
+  border-color: green;
+}
+
+
+input.invalid {
+  border-color: red;
+}
+
+
+.disabled-button {
+  background-color: #5bdb99;
+  color: #fff;
+}
+
+
+
+.success-message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 30rem;
+  max-width: 30rem;
+  background-color: rgb(59, 130, 93);
+  padding: 1.5rem;
+  gap: 3rem;
+}
+
+.register-success-text{
+color: #fff;
+text-align: left;
+font-size: 1.4rem;
+font-weight: 800;
+}
+
+.success-btn{
+  width: 10rem;
+  height: 3rem;
+  cursor: pointer;
+  background-color: rgb(59, 130, 93);
+  // background-color: crimson;
+  color: #fff;
+  outline: none;
+  border: none;
+  border: 3px solid #fff;
+  transition: 0.3s all;
+
+
+  &:hover{
+    background-color: rgb(49, 105, 76);
+    transition: 0.3s all;
+
+  }
+}
+
+
+
+@media screen and (max-width: 900px) {
+
+
+}
