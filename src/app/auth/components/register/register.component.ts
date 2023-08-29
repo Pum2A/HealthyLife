@@ -16,13 +16,14 @@ import * as Actions from '../../store/actions';
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <h2>Register Yourself</h2>
       <label>Username</label>
-      <input type="text" formControlName="username" name="username" placeholder="Username"  [ngClass]="{'valid': form.get('username').valid, 'invalid': form.get('username').invalid}" required />
+      <input type="text" formControlName="username" name="username" placeholder="Username" [value]="demoCredentials.username"  [ngClass]="{'valid': form.get('username').valid, 'invalid': form.get('username').invalid}" required />
       <label>Password</label>
       <input
       type="password"
       formControlName="password"
       name="password"
       placeholder="Password"
+      [value]="demoCredentials.password"
       [ngClass]="{'valid': form.get('password').valid, 'invalid': form.get('password').invalid}"
       required
       />
@@ -41,7 +42,7 @@ import * as Actions from '../../store/actions';
       </div>
 
       <label>Email</label>
-      <input type="text" formControlName="email" name="email" placeholder="Email"  [ngClass]="{'valid': form.get('email').valid, 'invalid': form.get('email').invalid}" required />
+      <input type="text" formControlName="email" name="email" placeholder="Email" [value]="demoCredentials.email"  [ngClass]="{'valid': form.get('email').valid, 'invalid': form.get('email').invalid}" required />
       <div *ngIf="emailError" class="email-error">
         <p class="error-message">
 
@@ -53,8 +54,24 @@ import * as Actions from '../../store/actions';
         Register
       </button>
       <div *ngIf="successfulMessage" class="success-message">
-      <p class="register-success-text">Register successfully!</p>
-      <button class="success-btn" (click)="closeSuccessMessage()">Close</button>
+        <p class="register-success-text">Register successfully!</p>
+        <button class="success-btn" (click)="closeSuccessMessage()">Close</button>
+      </div>
+
+      <div *ngIf="failureMessage" class="failure-message">
+        <p class="register-failure-text">Register failure!</p>
+        <button class="failure-btn" (click)="closeFailureMessage()">Close</button>
+</div>
+
+      <div class="login-container">
+      <p>Do you have account?
+        <a routerLink="/login">
+
+          Login in!
+        </a>
+
+        </p>
+      <button routerLink="/login">Login in</button>
       </div>
     </form>
   </div>
@@ -70,7 +87,16 @@ export class RegisterComponent implements OnInit {
   passwordMissingSpecialCharError: boolean = false;
   emailError: boolean = false;
   successfulMessage: boolean = false;
+  failureMessage: boolean = false;
+
   messageTimeout: any;
+
+  demoCredentials = {
+    username: 'Edward',
+    password: 'HardcorePassword123!',
+    email: 'demo@account.com'
+  };
+
 
 
   constructor(
@@ -95,6 +121,7 @@ export class RegisterComponent implements OnInit {
 
 
     this.successfulMessage = false;
+    this.failureMessage = false;
 
   }
 
@@ -124,22 +151,50 @@ export class RegisterComponent implements OnInit {
       this.closeSuccessMessage();
     }, 5000);
   }
+  closeFailureMessage() {
+    this.failureMessage = false;
+  }
+
+  showFailureMessage() {
+    this.failureMessage = true;
+    this.messageTimeout = setTimeout(() => {
+      this.closeFailureMessage();
+    }, 5000);
+  }
 
 
   onSubmit() {
     if (this.form.valid) {
       const user: User = this.form.value;
-      this.store.dispatch(registerAction({ user }));
-      this.showSuccessMessage();
 
+      // Porównaj z danymi demo dla rejestracji
+      if (
+        user.username === this.demoCredentials.username &&
+        user.password === this.demoCredentials.password &&
+        user.email === this.demoCredentials.email
+      ) {
+        // Rejestracja udana (dla celów demonstracyjnych)
+        console.log('Register success');
+        this.store.dispatch(registerAction({ user }));
+        localStorage.setItem('user', JSON.stringify(user));
+
+        this.showSuccessMessage();
+      } else {
+        // Rejestracja nieudana (dla celów demonstracyjnych)
+        console.log('Register failure');
+        this.store.dispatch(Actions.registerFailure({  message: 'Register failure' }));
+        this.showFailureMessage();
+
+
+      }
     } else {
-      this.passwordTooShortError = this.form
-        .get('password')
-        .hasError('minlength');
+      // Właściwa walidacja i komunikaty błędów
+      this.passwordTooShortError = this.form.get('password').hasError('minlength');
       this.passwordMissingSpecialCharError = !/.*[!@#$%^&*()].*/.test(
-        this.form.get('password').value,
+        this.form.get('password').value
       );
       this.emailError = this.form.get('email').hasError('email');
+
       if (this.passwordTooShortError) {
         this.store.dispatch(Actions.passwordTooShort());
       }
@@ -150,9 +205,30 @@ export class RegisterComponent implements OnInit {
         this.store.dispatch(Actions.emailInvalid());
       }
       if (this.successfulMessage) {
-        this.store.dispatch(Actions.registerSuccess({message: 'Rejestracja zakończona sukcesem!'  }));
+        this.store.dispatch(
+          Actions.registerSuccess({
+            message: 'Register success!',
+          })
+        );
       }
-
+      if (this.failureMessage) {
+        this.store.dispatch(
+          Actions.registerFailure({
+            message: 'Register Failure!',
+          })
+        );
+      }
     }
   }
+
+
+  getUser(): User {
+    const userString = localStorage.getItem('user');
+    if (userString) {
+      return JSON.parse(userString);
+    } else {
+      return null;
+    }
+  }
+
 }

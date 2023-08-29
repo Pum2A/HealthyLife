@@ -2,24 +2,33 @@ import { createReducer, on } from '@ngrx/store';
 import * as AuthActions from '../store/actions';
 import { RegisterError } from '../interfaces/register-error.interface';
 import { state } from '@angular/animations';
+import { State } from '@ngrx/store';
+import { LoginError } from '../interfaces/login-error.interface';
 
 export interface AuthState {
   // Inne pola stanu autoryzacji
   registerError: RegisterError | null;
   registerButtonDisabled: boolean;
+  loginError: LoginError | null;
 
 }
 
 const initialState: AuthState = {
   // Inicjalizacja innych pól stanu autoryzacji
   registerError: null,
-  registerButtonDisabled: false
+  registerButtonDisabled: false,
+  loginError: null,
 
 };
 
 export const authReducer = createReducer(
   initialState,
-  on(AuthActions.registerFailure, (state, { error }) => ({
+  on(AuthActions.registerFailure, (state) => ({
+    ...state,
+    registerButtonDisabled: false
+
+  })),
+  on(AuthActions.loginFailureAction, (state, { error }) => ({
     ...state,
     registerError: error,
     registerButtonDisabled: false
@@ -30,6 +39,10 @@ export const authReducer = createReducer(
     registerButtonDisabled: disabled
   })),
   on(AuthActions.registerSuccess, (state) => ({
+    ...state,
+    registerButtonDisabled: false
+  })),
+  on(AuthActions.loginSuccess, (state) => ({
     ...state,
     registerButtonDisabled: false
   })),

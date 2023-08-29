@@ -22,6 +22,23 @@ export class AuthEffects {
       })
     )
   );
+  loginAction$ = createEffect(() =>
+  this.actions$.pipe(
+    ofType(AuthActions.loginAction),
+    switchMap(action => {
+      const { username, password, email } = action.user; // Pobierz dane logowania z akcji
+
+      // Tutaj wykonaj rzeczywistą logikę logowania, np. HTTP żądanie
+      // Przykładowa logika: zakładamy, że udane logowanie to username 'admin' i hasło 'admin'
+      if (username === 'Edward' && password === 'HardcorePassword123!' && email === 'demo@account.com') {
+        return of(AuthActions.loginSuccess({ message: 'Logowanie zakończone sukcesem!' }));
+      } else {
+        return of(AuthActions.loginFailureAction({ error:  { message: 'Nieprawidłowe dane logowania' } }));
+      }
+    })
+  )
+);
+
 
   registerSuccess$ = createEffect(
     () =>
@@ -29,6 +46,29 @@ export class AuthEffects {
         ofType(AuthActions.registerSuccess),
         tap(() => {
           alert('Rejestracja powiodła się!');
+        })
+      ),
+    { dispatch: false }
+  );
+
+  loginSuccess$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(AuthActions.loginSuccess),
+        tap(() => {
+          alert('Logowanie powiodło się!');
+        })
+      ),
+    { dispatch: false }
+  );
+
+  loginFailure$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(AuthActions.loginFailureAction),
+        tap(action => {
+          console.error('Login failure:', action.error);
+          // Możesz dodać logikę tutaj do wyświetlenia komunikatu błędu lub podejścia do obsługi błędu.
         })
       ),
     { dispatch: false }
