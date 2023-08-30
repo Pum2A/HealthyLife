@@ -4,7 +4,7 @@ import { User } from '../../interfaces/user.interface';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { registerAction, registerSuccess } from '../../store/actions';
 import { isRegisterButtonDisabled } from '../../selectors/buttonDisabled.selectors';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import * as Actions from '../../store/actions';
 
 @Component({
@@ -61,17 +61,32 @@ import * as Actions from '../../store/actions';
       <div *ngIf="failureMessage" class="failure-message">
         <p class="register-failure-text">Register failure!</p>
         <button class="failure-btn" (click)="closeFailureMessage()">Close</button>
-</div>
+      </div>
 
       <div class="login-container">
-      <p>Do you have account?
-        <a routerLink="/login">
+        <p>Do you have account?
+          <a routerLink="/login">
 
-          Login in!
-        </a>
+            Login in!
+          </a>
+          <div class="demo-account-container">
+          <h3>
 
-        </p>
-      <button routerLink="/login">Login in</button>
+          Demo account:
+          </h3>
+          <p>
+          Username: Edward
+          </p>
+          <p>
+
+          Password: HardcorePassword123!
+          </p>
+          <p>
+
+          Email: demo@account.com
+          </p>
+          </div>
+
       </div>
     </form>
   </div>
@@ -96,6 +111,7 @@ export class RegisterComponent implements OnInit {
     password: 'HardcorePassword123!',
     email: 'demo@account.com'
   };
+  router: any;
 
 
 
@@ -172,14 +188,19 @@ export class RegisterComponent implements OnInit {
         user.username === this.demoCredentials.username &&
         user.password === this.demoCredentials.password &&
         user.email === this.demoCredentials.email
-      ) {
-        // Rejestracja udana (dla celów demonstracyjnych)
-        console.log('Register success');
-        this.store.dispatch(registerAction({ user }));
-        localStorage.setItem('user', JSON.stringify(user));
 
-        this.showSuccessMessage();
-      } else {
+        ) {
+          // Rejestracja udana (dla celów demonstracyjnych)
+          console.log('Register success');
+          this.store.dispatch(registerAction({ user }));
+          localStorage.setItem('user', JSON.stringify(user));
+
+
+
+
+          // return of(Actions.loginSuccess({ message: 'Logowanie zakończone sukcesem!' }));
+          this.showSuccessMessage();
+        } else {
         // Rejestracja nieudana (dla celów demonstracyjnych)
         console.log('Register failure');
         this.store.dispatch(Actions.registerFailure({  message: 'Register failure' }));

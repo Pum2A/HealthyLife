@@ -14,12 +14,15 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    const isAuthenticated = !!localStorage.getItem('token'); // Sprawdź, czy istnieje token w localStorage
+    const storedUser = JSON.parse(localStorage.getItem('user')); // Użyj klucza 'user' zamiast 'token'
 
-    if (isAuthenticated) {
-      return true; // Pozwól na dostęp, jeśli użytkownik jest zalogowany
+    console.log('Stored user:', storedUser);
+    console.log('returnUrl:', state.url);
+
+    if (storedUser) { // Sprawdź, czy storedUser istnieje
+      return true;
     } else {
-      // Przekieruj użytkownika do strony logowania z zachowaniem URL, który próbował odwiedzić
+      console.log('Redirecting to login');
       this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
       return false;
     }

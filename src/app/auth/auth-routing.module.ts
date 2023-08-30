@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, provideRouter, withComponentInputBinding } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {AuthGuard } from './guards/auth.guard';
@@ -14,12 +14,16 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     component: HomeComponent,
   },
+
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard
+
+  ],
 
 })
 export class AuthRoutingModule {}

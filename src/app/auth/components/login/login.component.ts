@@ -5,7 +5,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { registerAction, registerSuccess } from '../../store/actions';
 import { isRegisterButtonDisabled } from '../../selectors/buttonDisabled.selectors';
 import { Observable } from 'rxjs';
+import { Router,ParamMap } from '@angular/router';
 import * as Actions from '../../store/actions';
+import { state } from '@angular/animations';
+import { ActivatedRoute } from '@angular/router';
+
+
 
 
 @Component({
@@ -23,10 +28,39 @@ import * as Actions from '../../store/actions';
           <label>Password</label>
 
           <input type="password" formControlName="password" placeholder="Password" [value]="demoCredentials.password" />
-          <label>Email</label>
 
+
+
+
+          <p class="info-text">The password must contain one special character and be 8 characters long.</p>
+          <div *ngIf="passwordTooShortError" class="error-message">
+            <p class="error-message">
+
+              Password is too short.
+            </p>
+          </div>
+          <div *ngIf="passwordMissingSpecialCharError" class="error-message">
+            <p class="error-message">
+
+              The password must contain at least one special character.
+            </p>
+          </div>
+
+          <label>Email</label>
           <input type="email" formControlName="email" [value]="demoCredentials.email" placeholder="Email" />
+          <div *ngIf="emailError" class="email-error">
+        <p class="error-message">
+
+          Bad mail structure.
+        </p>
+      </div>
+
           <button class="login-btn" type="submit">Login</button>
+
+          <div *ngIf="successfulMessage" class="success-message">
+        <p class="register-success-text">Register successfully!</p>
+        <button class="success-btn" (click)="closeSuccessMessage()">Close</button>
+      </div>
 
           <div *ngIf="failureMessage" class="failure-message">
         <p class="register-failure-text">Register failure!</p>
@@ -34,13 +68,39 @@ import * as Actions from '../../store/actions';
 
 
       </div>
+      <div class="register-container">
+
+        <p>Create your account!
+          <a routerLink="/register">
+
+            Register yourself!
+          </a>
+          <div class="demo-account-container">
+            <h3>
+
+              Demo account:
+            </h3>
+            <p>
+              Username: Edward
+            </p>
+            <p>
+
+              Password: HardcorePassword123!
+            </p>
+            <p>
+
+              Email: demo@account.com
+            </p>
+          </div>
+        </div>
+
         </form>
       </div>
     </div>
   `,
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   // form: FormGroup;
   registerButtonDisabled$: Observable<boolean>;
@@ -51,6 +111,8 @@ export class LoginComponent {
   successfulMessage: boolean = false;
   failureMessage: boolean = false;
   messageTimeout: any;
+  returnUrl: string = '/';
+
 
 
   demoCredentials = {
@@ -59,7 +121,7 @@ export class LoginComponent {
     email: 'demo@account.com'
   };
 
-  constructor(private fb: FormBuilder, private store: Store) {}
+  constructor(private fb: FormBuilder, private store: Store, private router:Router, private route:ActivatedRoute) {}
 
   form = this.fb.group({
     username: ['', Validators.required],
@@ -96,31 +158,47 @@ export class LoginComponent {
   }
 
 
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.returnUrl = params['returnUrl'] || '/home';
+      console.log('returnUrl:', this.returnUrl);
+    });
+  }
+
+
+
 
 
   onSubmit() {
     if (this.form.valid) {
-      const user = JSON.parse(localStorage.getItem('user'));
+      const storedUser = JSON.parse(localStorage.getItem('user'));
+
+      console.log('Form value:', this.form.value);
+      console.log('Stored user:', storedUser);
 
       // Porównaj z danymi demo dla logowania
       if (
-        this.form.value.email === user.email &&
-        this.form.value.password === user.password &&
-        this.form.value.username === user.username
+        this.form.value.email === storedUser.email &&
+        this.form.value.password === storedUser.password &&
+        this.form.value.username === storedUser.username
       ) {
         // Logowanie udane (demo)
         console.log('Login success');
-        this.store.dispatch(
-          Actions.loginSuccess({ message: 'Login success!' })
-        );
+
+        // Wyświetlanie informacji o poprawnym zalogowaniu
+        this.showSuccessMessage();
+
+        // Przekierowanie do returnUrl lub domyślnie '/home'
+        console.log('Redirecting to:', this.returnUrl || '/home');
+        this.router.navigate([this.returnUrl || '/home']);
       } else {
         // Logowanie nieudane (demo)
         console.log('Login failure');
-        this.store.dispatch(Actions.loginFailureAction({ error: { message: 'Login failure' } }));
-        this.showFailureMessage();
 
+        // Wyświetlanie informacji o błędzie logowania
+        this.showFailureMessage();
       }
-    } else {
+    } else{
       // Walidacja i komunikaty błędów
       this.passwordTooShortError = this.form.get('password').hasError('minlength');
       this.passwordMissingSpecialCharError = !/.*[!@#$%^&*()].*/.test(
@@ -138,16 +216,13 @@ export class LoginComponent {
         this.store.dispatch(Actions.emailInvalid());
       }
       if (this.successfulMessage) {
-        this.store.dispatch(
-          Actions.loginSuccess({ message: 'Login success!' })
-        );
+        this.store.dispatch(Actions.loginSuccess({ message: 'Login success!' }));
       }
       if (this.failureMessage) {
-        this.store.dispatch(
-          Actions.loginSuccess({ message: 'Login Failure!' })
-        );
+        this.store.dispatch(Actions.loginSuccess({ message: 'Login Failure!' }));
       }
     }
   }
+
 
 }

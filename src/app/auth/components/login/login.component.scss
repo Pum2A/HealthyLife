@@ -178,3 +178,48 @@ font-weight: 800;
     padding: 1.5rem;
     gap: 3rem;
   }
+
+
+.demo-account-container{
+  margin: 1rem 1rem;
+  max-width: 30rem;
+  min-width: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.4rem;
+  gap: .5rem;
+}
+
+
+.register-container{
+  min-width: 30rem;
+  max-width: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.register-container p{
+  font-size: 1.5rem;
+}
+
+.info-text{
+  min-width: 30rem;
+  max-width: 30rem;
+  font-size: 1.3rem;
+}
+
+
+
+
+
+a{
+  text-decoration: none;
+  color: inherit;
+  color: #5bdb99;
+  font-weight: 800;
+  font-size: 1.6rem;
+}
