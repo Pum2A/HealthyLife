@@ -1,0 +1,168 @@
+.sidebar-container{
+  width: 25vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+  // box-shadow: 0px 0px 35px #111111;
+  }
+.sidebar-container a{
+  display: flex;
+  justify-content: center; /* Równa odległość między elementami */
+  align-items: center;
+  padding: 0 3rem; /* Dodaj padding po obu stronach */
+  font-size: 2.5rem;
+  height:7.7rem;
+  text-decoration: none;
+  color: #000;
+  font-weight:200;
+  width: 100%;
+
+  &:hover{
+    background-color: #f4e9e9;
+  }
+
+}
+
+.sidebar-container a:last-child{
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+
+}
+
+.sidebar-container a.active{
+  width: 100%;
+  color: #000;
+  background-color: #f4e9e9;
+  margin-left: 0;
+  position: relative;
+  transition: all 0.3s ease;
+
+}
+
+.sidebar-container a.active::before{
+  content: '';
+  width: 1rem;
+  height: 100%;
+  background-color: #272626;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+
+.sidebar-container a span{
+  flex-grow: 1;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.close-btn-container{
+  // height: 10rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+
+
+}
+
+#close-btn{
+  font-size: 4rem;
+  background-color: #272626;
+  padding: .4rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 50%;
+
+}
+span{
+  font-size: 4rem;
+}
+
+.menu-btn-container{
+  width: 10vw;
+  height: 12vh;
+  // display: flex;
+  // justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin: 3rem 0rem;
+  z-index: 1000;
+}
+.menu-btn-container span{
+  margin-left: 2rem;
+
+  font-size: 4rem;
+  background-color: #272626;
+  padding: 1rem;
+  cursor: pointer;
+  color: #fff;
+  // border-radius: 50%;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  margin: 1.5rem 1rem;
+  font-weight: 300;
+  margin-left: 2rem;
+  letter-spacing:2px;
+  background-color: #272626;
+  // padding: 1rem;
+  cursor: pointer;
+  color: #fff;
+
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+  .sidebar-container{
+    height: 83vh;
+    width: 60vw;
+  }
+
+  .menu-btn-container{
+    width: 60vw;
+    height: 8rem;
+  }
+
+
+
+  .sidebar-container a{
+    font-size: 2rem;
+    padding: 0 2rem; /* Dodaj padding po obu stronach */
+    height:5.7rem;
+
+
+  }
+
+  span{
+    font-size: 3rem;
+  }
+  .menu-btn-container span {
+    display: inline-block;
+    font-size: 2.5rem;
+  }
+}
+
+
+
+
+
+
+a{
+  text-decoration: none;
+  color: inherit;
+}

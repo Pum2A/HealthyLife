@@ -9,9 +9,17 @@ import { StoreModule } from '@ngrx/store';
 import { environment } from 'src/environments/environment.development';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HomeComponent } from './home/components/home/home.component';
+import { HomeRoutingModule } from './home/home-routing.module';
+import { SidebarComponent } from './home/components/sidebar/sidebar.component';
+import { OfferComponent } from './home/components/offer/offer.component';
+import { PricesComponent } from './home/components/prices/prices.component';
+import { RulesComponent } from './home/components/rules/rules.component';
+import { AboutComponent } from './home/components/about/about.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, SidebarComponent, OfferComponent, PricesComponent, RulesComponent, AboutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,6 +34,8 @@ import { HomeComponent } from './home/components/home/home.component';
       traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
     }),
     ReactiveFormsModule,
+    HomeRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
