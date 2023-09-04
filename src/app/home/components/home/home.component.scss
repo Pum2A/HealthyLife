@@ -1,0 +1,151 @@
+app-sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 0;
+
+
+}
+
+
+.main-container{
+  padding-top: 12rem;
+  height: 200vh;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 15rem;
+
+  gap: 2rem;
+
+}
+
+.main-text-container{
+
+  max-width: 150rem;
+  line-height: 4.2rem;
+  font-size: 3rem;
+  font-weight: 300;
+  text-overflow: clip;
+
+  word-wrap: break-word; /* Dzielenie długich słów */
+  overflow-wrap: break-word; /* Obsługa przerywania linii */
+  white-space: normal;
+  text-align: justify;
+  text-shadow: 0px 0px 2px gray;
+  margin: 2rem 2rem;
+
+
+
+}
+
+.shopping-card-container{
+  width: 100%;
+  height: 12rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.shopping-card-container span{
+  // margin-right: 5rem;
+  top: 0;
+  left: 0;
+  margin: 1.5rem 2rem;
+  padding: 1.3rem;
+  font-weight: 100;
+  font-size: 3.2rem;
+  background-color: #272626;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+
+}
+
+
+.main-photo-container {
+  max-width: 150rem;
+  // height: 170rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #191818;
+}
+
+
+
+
+.main-photo-container img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+width: 30rem;
+height: 30rem;
+cursor: pointer;    filter: brightness(80%);
+
+  transition: all 0.3s ease;
+  z-index: 1;
+  box-shadow: 0px 0px 4px #272626;
+  margin: 2rem 0rem;
+
+
+  &:hover{
+
+    filter: brightness(60%);
+    transition: filter 0.3s;
+    box-shadow: 0px 0px 15px #454343;
+  }
+}
+
+
+
+.main-photo-container p{
+  font-size: 3.5rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+  padding: 2rem;
+  margin: 2rem 0rem;
+  background-color: #272626;
+  text-align: left;
+  box-shadow: 0px 0px 4px #272626;
+
+}
+
+.photo-blocks{
+  max-width: 30rem;
+}
+
+h1{
+  font-size: 5rem;
+  font-weight: 600;
+  margin: 2rem 2rem;
+}
+
+@media screen and (max-width: 900px) {
+  .main-container{
+    margin: 0 10rem;
+    height: 800vh;
+
+  }
+}
+@media screen and (min-width: 2000px) {
+
+  .main-photo-container img{
+    width: 40rem;
+    height: 45rem;
+  }
+
+
+  .photo-blocks{
+    max-width: 60rem;
+  }
+}

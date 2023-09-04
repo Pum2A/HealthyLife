@@ -5,6 +5,7 @@ import { OfferComponent } from './components/offer/offer.component';
 import { PricesComponent } from './components/prices/prices.component';
 import { RulesComponent } from './components/rules/rules.component';
 import { AboutComponent } from './components/about/about.component';
+import { TrainingDetailsComponent } from './components/training-details/training-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'about', component: AboutComponent
 
+  },
+
+  {
+    path:'details/:type', component:TrainingDetailsComponent
   },
 
 

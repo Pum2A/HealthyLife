@@ -19,7 +19,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         menu
       </span>
     </div>
-  <div class="sidebar-container" *ngIf="isClicked" [@slideInOut]="menuState">
+  <div class="sidebar-container"  [@slideInOut]="menuState">
     <div class="close-btn-container">
 
     </div>
@@ -73,10 +73,10 @@ logout
   animations: [
     trigger('slideInOut', [
       state('in', style({
-        transform: 'translate3d(-100%, 0, 0)'
+        transform: 'translate3d(0%, 0, 0)'
       })),
       state('out', style({
-        transform: 'translate3d(0, 0, 0)'
+        transform: 'translate3d(-100%, 0, 0)'
       })),
       transition('in => out', animate('250ms ease-out')),
       transition('out => in', animate('250ms ease-in'))
@@ -86,18 +86,16 @@ logout
 })
 export class SidebarComponent {
 
-
   isClicked = true;
 
-  isClickedMenu() {
-    this.isClicked = !this.isClicked;
-    console.log('click');
-  }
+
 
 
   menuState:string = 'out';
 
   toggleMenu(){
+    this.isClicked = !this.isClicked;
+
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
   }
 

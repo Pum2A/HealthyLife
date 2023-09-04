@@ -1,12 +1,15 @@
 .sidebar-container{
   width: 25vw;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  position: relative;
   transition: all 0.3s ease;
-  // box-shadow: 0px 0px 35px #111111;
+  background-color: #272626;
+  z-index: 100;
+
+
+  border: 1px solid #000;
   }
 .sidebar-container a{
   display: flex;
@@ -16,12 +19,13 @@
   font-size: 2.5rem;
   height:7.7rem;
   text-decoration: none;
-  color: #000;
+  color: #fff;
   font-weight:200;
   width: 100%;
 
   &:hover{
     background-color: #f4e9e9;
+    color: #000;
   }
 
 }
@@ -47,7 +51,7 @@
   content: '';
   width: 1rem;
   height: 100%;
-  background-color: #272626;
+  background-color: #171515;
   position: absolute;
   left: 0;
   transition: all 0.3s ease;
@@ -95,7 +99,6 @@ span{
   align-items: center;
   flex-direction: column;
   margin: 3rem 0rem;
-  z-index: 1000;
 }
 .menu-btn-container span{
   margin-left: 2rem;

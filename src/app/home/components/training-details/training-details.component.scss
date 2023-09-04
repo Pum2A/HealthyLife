@@ -1,0 +1,86 @@
+app-sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 0;
+
+
+}
+
+
+.main-container{
+  width: 100%;
+  height: 100vh;
+}
+
+.main-text-container{
+  height: auto;
+  padding: 2rem;
+  width: 60%;
+  margin-left: auto;
+  display: flex;
+  background-color: #272626;
+}
+
+.h2-container{
+  width: 100%;
+  height: 40rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.h2-container h2{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 5rem;
+}
+
+.description-container{
+  width: 100%;
+  line-height: 5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.description-container p{
+  font-size: 3rem;
+  font-weight: 100;
+  color: #fff;
+}
+
+p span{
+  font-weight: 600;
+}
+button{
+  width: 20rem;
+  height: 5rem;
+  outline: none;
+  overflow: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #212020;
+  border: none;
+  border-bottom: 3px solid #fff;
+  margin: 2rem 0rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+
+  &:hover{
+    background-color: #151414;
+  }
+}
+
+@media screen and (min-width: 900px){
+
+  .main-text-container{
+    height: 100vh;
+  }
+  .h2-container h2{
+    font-size: 8rem;
+  }
+
+}

@@ -16,10 +16,11 @@ import { PricesComponent } from './home/components/prices/prices.component';
 import { RulesComponent } from './home/components/rules/rules.component';
 import { AboutComponent } from './home/components/about/about.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { TrainingDetailsComponent } from './home/components/training-details/training-details.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SidebarComponent, OfferComponent, PricesComponent, RulesComponent, AboutComponent],
+  declarations: [AppComponent, HomeComponent, SidebarComponent, OfferComponent, PricesComponent, RulesComponent, AboutComponent, TrainingDetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
