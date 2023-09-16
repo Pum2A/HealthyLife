@@ -1,151 +1,267 @@
+@import '../../../../variables.scss';
+
+p{
+  margin: 0;
+}
+
 app-sidebar{
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   width: 0;
-
-
+  display: none;
 }
 
-
 .main-container{
-  padding-top: 12rem;
-  height: 200vh;
+  width: 100%;
+  height: 100%;
+  margin-top: 0rem;
   display: flex;
   // justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 0 15rem;
 
-  gap: 2rem;
-
-}
-
-.main-text-container{
-
-  max-width: 150rem;
-  line-height: 4.2rem;
-  font-size: 3rem;
-  font-weight: 300;
-  text-overflow: clip;
-
-  word-wrap: break-word; /* Dzielenie długich słów */
-  overflow-wrap: break-word; /* Obsługa przerywania linii */
-  white-space: normal;
-  text-align: justify;
-  text-shadow: 0px 0px 2px gray;
-  margin: 2rem 2rem;
-
-
+  background-color: $second-background-color;
+  padding: 0rem 5rem;
 
 }
 
-.shopping-card-container{
+.main-about-us-container{
+  max-width: 75rem;
   width: 100%;
-  height: 12rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  margin-top: 10rem;
+  max-height: 75rem;
+  background-color: $main-background-color;
+  border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  // border-radius: 3rem;
+  padding: 10rem 5rem;
 }
-
-.shopping-card-container span{
-  // margin-right: 5rem;
-  top: 0;
-  left: 0;
-  margin: 1.5rem 2rem;
-  padding: 1.3rem;
-  font-weight: 100;
-  font-size: 3.2rem;
-  background-color: #272626;
-  cursor: pointer;
-  color: #fff;
-  transition: all 0.3s ease;
+.main-about-us-container p{
+  // line-height: 4rem;
 
 }
-
-
-.main-photo-container {
-  max-width: 150rem;
-  // height: 170rem;
+.main-text-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  background-color: #191818;
+  text-align: center;
+  max-width: 85rem;
+  // height: auto;
+
+  gap: 1rem;
+  // margin-top: 27rem;
+
+
+
 }
 
-
-
-
-.main-photo-container img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-width: 30rem;
-height: 30rem;
-cursor: pointer;    filter: brightness(80%);
-
-  transition: all 0.3s ease;
-  z-index: 1;
-  box-shadow: 0px 0px 4px #272626;
-  margin: 2rem 0rem;
-
-
-  &:hover{
-
-    filter: brightness(60%);
-    transition: filter 0.3s;
-    box-shadow: 0px 0px 15px #454343;
-  }
-}
-
-
-
-.main-photo-container p{
-  font-size: 3.5rem;
-  color: #fff;
+.h1-container{
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 15rem;
+  width: 100%;
+  // margin: 5rem 5rem;
+  max-width: 85rem;
+  // height: 60rem;
+  max-height: 40rem;
+}
+.h1-container h1{
   font-weight: 500;
-  padding: 2rem;
-  margin: 2rem 0rem;
-  background-color: #272626;
-  text-align: left;
-  box-shadow: 0px 0px 4px #272626;
-
-}
-
-.photo-blocks{
-  max-width: 30rem;
-}
-
-h1{
   font-size: 5rem;
+  letter-spacing: .3rem;
+  line-height:7rem;
+  color: #fff;
+  padding: 3rem 3rem;
+  border-left: 2rem solid $main-background-color;
+  border-right: 2rem solid $main-background-color;
+  border-top-left-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover{
+    background-color: $main-second-theme-color;
+    transition: all 0.3s ease;
+    border-radius: 15rem;
+    margin: .5rem;
+
+  }
+  // margin-top: 10rem;
+}
+.btn-container{
+  max-width: 85rem;
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  flex-direction: column;
+  margin: 5rem 3rem 0rem;
+
+}
+
+.btn-container button{
+  height: 7rem;
+  border-radius: 30rem;
+  font-size: 2.5rem;
   font-weight: 600;
-  margin: 2rem 2rem;
+  border: 1px solid $main-background-color;
 }
 
-@media screen and (max-width: 900px) {
+.btn-container p{
+
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+.description-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+}
+
+.description-container p{
+
+  margin: 1rem 0rem;
+
+}
+.img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0rem;
+  outline: none;
+  border: none;
+}
+
+img{
+
+  border-radius: 50%;
+  max-width: 30rem;
+    min-width: 30rem;
+    border: 10px solid $main-background-color;
+  object-fit: cover;
+    min-height: 30rem;
+    max-height: 30rem;
+
+  margin: 2rem 0rem 2rem 0rem;
+  cursor: pointer;
+  // box-shadow: 0px 0px 5px #fff;
+  transition: all 0.3s ease;
+
+  &:hover{
+    box-shadow: 0px 0px 15px $main-second-theme-color;
+    transition: all 0.3s ease;
+  }
+}
+
+.bold{
+  font-weight: bold;
+  letter-spacing: .2rem;
+}
+
+
+a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.7rem;
+  transition: all 0.3s ease;
+  font-weight: 200;
+
+  &:hover{
+    color: $main-second-theme-color;
+    transition: all 0.3s ease;
+  }
+
+
+}
+p{
+  font-size: 2rem;
+  font-weight: 200;
+  text-align: justify;
+  line-height: 2.5rem;
+
+  color: #fff;
+
+}
+button{
+  min-width: 25rem;
+  max-width: 40rem;
+  height: 5rem;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: $blocks-background-color;
+  color: #e9e4e4;
+  transition: all 0.3s ease;
+  margin: 2rem 0rem;
+
+  &:hover{
+    transition: all 0.3s ease;
+    color: #fff;
+    background-color: $main-second-theme-color;
+    border-top-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  box-sizing: 0px 0px 15px #fff;
+  }
+
+}
+
+@media screen and (min-width: 1200px){
+  .main-text-container{
+    justify-content: space-between;
+
+  }
+
+
+
+  .h1-container h1{
+
+    font-size: 12rem;
+    line-height: 12.5rem;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .main-text-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    max-width: 85rem;
+
+    gap: 3rem;
+
+
+
+  }
   .main-container{
-    margin: 0 10rem;
-    height: 800vh;
+    height: 100%;
+
 
   }
+  app-sidebar{
+    display: block;
+  }
+
+
+
+
 }
-@media screen and (min-width: 2000px) {
-
-  .main-photo-container img{
-    width: 40rem;
-    height: 45rem;
-  }
+@media screen and (min-width:700px) and (max-width:1150px){
 
 
-  .photo-blocks{
-    max-width: 60rem;
-  }
+
 }
+

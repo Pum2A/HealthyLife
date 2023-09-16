@@ -1,8 +1,7 @@
 @import '../../../../variables.scss';
 
-
 .sidebar-container{
-  width: 25vw;
+  // width: 25vw;
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -10,6 +9,8 @@
   transition: all 0.3s ease;
   background-color: $main-background-color;
   z-index: 100;
+  position: absolute;
+
 
 
   border: 1px solid #000;
@@ -25,6 +26,7 @@
   color: #fff;
   font-weight:200;
   width: 100%;
+
 
   &:hover{
     background-color: #f4e9e9;
@@ -95,14 +97,15 @@ span{
 }
 
 .menu-btn-container{
-  width: 10vw;
+  width: 15vw;
   height: 12vh;
+  background-color: $main-background-color;
+  display: none;
   // display: flex;
   // justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  margin: 3rem 0rem;
-
+  // margin: 3rem 0rem;
 }
 .menu-btn-container span{
   margin-left: 2rem;
@@ -112,11 +115,6 @@ span{
   padding: 1rem;
   cursor: pointer;
   color: #fff;
-
-  &:hover{
-
-    background-color: $third-theme-color;
-  }
   // border-radius: 50%;
 }
 
@@ -140,14 +138,17 @@ span{
 
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
   .sidebar-container{
     height: 83vh;
-    width: 45vw;
+    width: 35vw;
   }
 
   .menu-btn-container{
-    width: 60vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     height: 8rem;
   }
 

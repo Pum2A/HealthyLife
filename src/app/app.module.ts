@@ -17,10 +17,12 @@ import { RulesComponent } from './home/components/rules/rules.component';
 import { AboutComponent } from './home/components/about/about.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { TrainingDetailsComponent } from './home/components/training-details/training-details.component';
+import { TopbarComponent } from './home/components/topbar/topbar.component';
+import { NgOptimizedImage } from '@angular/common'
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SidebarComponent, OfferComponent, PricesComponent, RulesComponent, AboutComponent, TrainingDetailsComponent],
+  declarations: [AppComponent, HomeComponent, SidebarComponent, OfferComponent, PricesComponent, RulesComponent, AboutComponent, TrainingDetailsComponent, TopbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,6 +39,7 @@ import { TrainingDetailsComponent } from './home/components/training-details/tra
     ReactiveFormsModule,
     HomeRoutingModule,
     BrowserAnimationsModule,
+    NgOptimizedImage,
   ],
   providers: [],
   bootstrap: [AppComponent],

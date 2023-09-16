@@ -8,13 +8,6 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 
     <div class="menu-btn-container">
 
-      <div class="logo">
-        <a [routerLink]="''">
-
-          HL
-        </a>
-
-      </div>
       <span class="material-symbols-outlined" (click)="toggleMenu()">
         menu
       </span>
@@ -43,7 +36,7 @@ check_box
 payments
 </span>
     Prices
-
+home
     </a>
     <a routerLink="/rules" [routerLinkActive]="'active'">
     <span class="material-symbols-outlined">

@@ -15,6 +15,10 @@
       "prefix": "app",
       "architect": {
         "build": {
+          "customWebpackConfig": {
+            "path": "/src/custom-webpack.config.js",
+            "replaceDuplicatePlugins": true
+          },
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/healthy-life",
@@ -24,7 +28,10 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -85,7 +92,10 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
+            ],
             "scripts": []
           }
         }

@@ -9,6 +9,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { LoginComponent } from '../components/login/login.component'
 import { StoreModule } from '@ngrx/store';
 
+
 @NgModule({
   declarations: [
     LoginComponent,
