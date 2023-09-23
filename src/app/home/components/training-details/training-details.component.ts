@@ -6,6 +6,10 @@ import { ActivatedRoute } from '@angular/router';
   template: `
     <app-topbar></app-topbar>
     <app-sidebar></app-sidebar>
+    <div class="main-container-shopping-card">
+
+      <app-shopping-card></app-shopping-card>
+    </div>
     <div class="page-margin">
 
       <div class="main-container">

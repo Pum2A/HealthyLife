@@ -18,11 +18,14 @@ import { AboutComponent } from './home/components/about/about.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { TrainingDetailsComponent } from './home/components/training-details/training-details.component';
 import { TopbarComponent } from './home/components/topbar/topbar.component';
-import { NgOptimizedImage } from '@angular/common'
+import { NgOptimizedImage } from '@angular/common';
+import { ShoppingCardComponent } from './home/components/shopping-card/shopping-card.component'
+import {  HttpClientModule } from '@angular/common/http';
+import { JsonDataService } from './home/services/json-data.service';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SidebarComponent, OfferComponent, PricesComponent, RulesComponent, AboutComponent, TrainingDetailsComponent, TopbarComponent],
+  declarations: [AppComponent, HomeComponent, SidebarComponent, OfferComponent, PricesComponent, RulesComponent, AboutComponent, TrainingDetailsComponent, TopbarComponent, ShoppingCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -40,8 +43,9 @@ import { NgOptimizedImage } from '@angular/common'
     HomeRoutingModule,
     BrowserAnimationsModule,
     NgOptimizedImage,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [JsonDataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Legs Training plan", "price": 22.50 },
+  { "id": 2, "name": "Arms training plan", "price": 27.00 },
+  { "id": 3, "name": "Biceps training plan", "price": 29.25 },
+  { "id": 4, "name": "Triceps training plan", "price": 49.25 },
+  { "id": 5, "name": "Back training plan", "price": 19.25 },
+  { "id": 6, "name": "Chest training plan", "price": 39.25 }
+]

@@ -102,9 +102,9 @@ span{
   background-color: $main-background-color;
   display: none;
   // display: flex;
+  // justify-content: space-between;
   // justify-content: flex-start;
   align-items: center;
-  flex-direction: column;
   // margin: 3rem 0rem;
 }
 .menu-btn-container span{
@@ -147,9 +147,12 @@ span{
   .menu-btn-container{
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
     height: 8rem;
+  }
+  .menu-btn-container span{
+    margin: 2rem 2rem;
   }
 
 

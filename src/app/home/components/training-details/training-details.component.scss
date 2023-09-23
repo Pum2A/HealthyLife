@@ -12,6 +12,20 @@ app-sidebar{
 
 }
 
+app-shopping-card{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  width: 100%;
+}
+.main-container-shopping-card{
+  display: none;
+  // display: flex;
+  text-align: end;
+}
+
 
 .page-margin{
   // margin: 0rem 5rem 0rem 5rem;
@@ -133,6 +147,7 @@ button:last-child{
   app-sidebar{
     display: block;
   }
+
 
 
   button:last-child{

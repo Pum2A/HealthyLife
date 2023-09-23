@@ -7,6 +7,7 @@ import { RulesComponent } from './components/rules/rules.component';
 import { AboutComponent } from './components/about/about.component';
 import { TrainingDetailsComponent } from './components/training-details/training-details.component';
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {

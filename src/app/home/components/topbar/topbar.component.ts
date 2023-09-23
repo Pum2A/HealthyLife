@@ -10,6 +10,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 <span class="material-symbols-outlined" (click)="toggleMenu()">
   menu
 </span>
+<span id="shoppingCard" class="material-symbols-outlined">
+        shopping_cart
+      </span>
 </div>
 <div class="sidebar-container"  [@slideInOut]="menuState">
 <div class="close-btn-container">

@@ -13,6 +13,18 @@ app-sidebar{
   display: none;
 }
 
+app-shopping-card{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+}
+.main-container-shopping-card{
+  display: flex;
+  text-align: end;
+}
+
 .main-container{
   width: 100%;
   height: 100%;
@@ -28,18 +40,18 @@ app-sidebar{
 }
 
 .main-about-us-container{
-  max-width: 75rem;
+  max-width: 65rem;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10rem;
-  max-height: 75rem;
+  max-height: 80rem;
   background-color: $main-background-color;
-  border-bottom-left-radius: 3rem;
-  border-bottom-right-radius: 3rem;
+  border-bottom-left-radius: 10rem;
+  border-bottom-right-radius: 10rem;
   // border-radius: 3rem;
-  padding: 10rem 5rem;
+  padding: 5rem 5rem;
 }
 .main-about-us-container p{
   // line-height: 4rem;
@@ -71,6 +83,7 @@ app-sidebar{
   max-width: 85rem;
   // height: 60rem;
   max-height: 40rem;
+
 }
 .h1-container h1{
   font-weight: 500;
@@ -80,16 +93,16 @@ app-sidebar{
   color: #fff;
   padding: 3rem 3rem;
   border-left: 2rem solid $main-background-color;
-  border-right: 2rem solid $main-background-color;
-  border-top-left-radius: 5rem;
-  border-bottom-right-radius: 5rem;
+  // border-right: 2rem solid $main-background-color;
+  // border-top-left-radius: 5rem;
+  // border-bottom-right-radius: 5rem;
   cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover{
     background-color: $main-second-theme-color;
     transition: all 0.3s ease;
-    border-radius: 15rem;
+    border-radius: 1rem;
     margin: .5rem;
 
   }
@@ -253,6 +266,7 @@ button{
   }
   app-sidebar{
     display: block;
+    // width: 10  0%;
   }
 
 

@@ -2,7 +2,7 @@
 
 
 .sidebar-container{
-  width: 25vw;
+  width: 20vw;
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,7 @@
   transition: all 0.3s ease;
   background-color: $main-background-color;
   z-index: 100;
+
 
 
   border: 1px solid #000;
@@ -103,21 +104,22 @@ span{
   flex-direction: column;
   margin: 3rem 0rem;
 
+
 }
 .menu-btn-container span{
   margin-left: 2rem;
 
   font-size: 4rem;
   background-color: $main-background-color;
-  padding: 1rem;
+  padding: 1.5rem;
   cursor: pointer;
   color: #fff;
+  border-radius: 50%;
 
   &:hover{
 
     background-color: $third-theme-color;
   }
-  // border-radius: 50%;
 }
 
 .logo{
