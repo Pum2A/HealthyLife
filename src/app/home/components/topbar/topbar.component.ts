@@ -6,14 +6,29 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   selector: 'app-topbar',
   template:`
 <div class="menu-btn-container">
-
-<span class="material-symbols-outlined" (click)="toggleMenu()">
+  <div class="logo" routerLink="/home">HEALTHY</div>
+  <nav>
+    <ul>
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/offer">Offer</a></li>
+      <li><a routerLink="/prices">Prices</a></li>
+      <li><a routerLink="/rules">Rules</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/logout">Logout</a></li>
+    </ul>
+  </nav>
+<span id="menu" class="material-symbols-outlined" (click)="toggleMenu()">
   menu
 </span>
-<span id="shoppingCard" class="material-symbols-outlined">
+<span id="shoppingCard" class="material-symbols-outlined" (click)="toggleShoppingCardMenu()">
         shopping_cart
       </span>
-</div>
+
+    </div>
+    <div class="test" *ngIf="!isClickedShop">
+
+      <app-shopping-card></app-shopping-card>
+    </div>
 <div class="sidebar-container"  [@slideInOut]="menuState">
 <div class="close-btn-container">
 
@@ -68,10 +83,10 @@ Logout</a>
   animations: [
     trigger('slideInOut', [
       state('in', style({
-        transform: 'translate3d(0%, 0, 0)'
+        transform: 'translate3d(8%, 20%, 0)'
       })),
       state('out', style({
-        transform: 'translate3d(-100%, 0, 0)'
+        transform: 'translate3d(-100%, 20%, 0)'
       })),
       transition('in => out', animate('250ms ease-out')),
       transition('out => in', animate('250ms ease-in'))
@@ -80,8 +95,11 @@ Logout</a>
 })
 export class TopbarComponent {
   isClicked = true;
+  isClickedShop = true;
+  toggleShoppingCardMenu(){
+    this.isClickedShop = !this.isClickedShop;
 
-
+  }
 
 
   menuState:string = 'out';

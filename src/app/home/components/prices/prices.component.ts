@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-prices',
-  templateUrl: './prices.component.html',
+  template:`
+  <app-topbar></app-topbar>`,
   styleUrls: ['./prices.component.scss']
 })
 export class PricesComponent {

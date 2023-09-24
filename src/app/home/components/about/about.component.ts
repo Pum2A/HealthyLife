@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-about',
-  templateUrl: './about.component.html',
+  template:`
+  <app-topbar></app-topbar>`,
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { CartItem } from '../../interfaces/cart.interface';
 import { Product } from '../../interfaces/product.interface';
@@ -9,22 +9,19 @@ import { JsonDataService } from '../../services/json-data.service';
   styleUrls: ['./shopping-card.component.scss'],
   template: `
     <div class="container">
-      <span id="cart-icon" class="material-symbols-outlined">
-        shopping_cart
-      </span>
       <div class="shopping-card-details-container">
         <div class="header-text-container">
-          <p>YOUR ITEMS ({{ cartItems.length }})</p>
+          <p>Your items ({{ cartItems.length }})</p>
         </div>
         <div class="main-text-container" *ngFor="let item of cartItems">
           <p>{{ item.product.name }}</p>
           <p>Ilość: {{ item.quantity }}</p>
-          <button (click)="removeFromCart(item)">Usuń</button>
+          <button (click)="removeFromCart(item)">Delete</button>
 
         </div>
 
         <div class="footer-text-container">
-          <p>YOUR PRICE IS:</p>
+          <p>Your price is:</p>
         </div>
       </div>
     </div>
@@ -39,7 +36,19 @@ export class ShoppingCardComponent implements OnInit {
     private JsonDataService: JsonDataService,
 
     ) {}
+
+
     public addToCartClickCount: number = 0;
+    isMenuOpen = false;
+
+
+
+    // toggleMenu() {
+    //   this.isMenuOpen = !this.isMenuOpen;
+    // }
+
+
+
 
     removeFromCart(item: CartItem): void {
       // Tutaj umieść logikę usuwania elementu z koszyka

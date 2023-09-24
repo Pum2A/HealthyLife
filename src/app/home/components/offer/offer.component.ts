@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-offer',
-  templateUrl: './offer.component.html',
+  template:`
+  <app-topbar></app-topbar>`,
   styleUrls: ['./offer.component.scss']
 })
 export class OfferComponent {

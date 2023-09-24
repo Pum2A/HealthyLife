@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-rules',
-  templateUrl: './rules.component.html',
+  template:`
+  <app-topbar></app-topbar>`,
   styleUrls: ['./rules.component.scss']
 })
 export class RulesComponent {

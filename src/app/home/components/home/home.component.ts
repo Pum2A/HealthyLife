@@ -13,12 +13,12 @@ import { JsonDataService } from '../../services/json-data.service';
 @Component({
   selector: 'app-home',
   template: `
-    <app-topbar></app-topbar>
-    <app-sidebar></app-sidebar>
-    <div class="main-container-shopping-card">
+    <app-topbar> </app-topbar>
+    <!-- <app-sidebar></app-sidebar> -->
+    <!-- <div class="main-container-shopping-card"> -->
 
-      <app-shopping-card></app-shopping-card>
-    </div>
+      <!-- <app-shopping-card></app-shopping-card> -->
+    <!-- </div> -->
     <div class="main-container">
 
       <div class="h1-container">
@@ -30,7 +30,7 @@ import { JsonDataService } from '../../services/json-data.service';
             Welcome to
             <b>
 
-              HEALTHY
+              Healthy
             </b>
              I am very excited that you are here. Our
             site is the perfect place for anyone passionate about fitness and
@@ -39,8 +39,8 @@ import { JsonDataService } from '../../services/json-data.service';
             goals.
           </p>
         </div>
-        <div class="btn-container">
-          <p>Check our Offer</p>
+        <div class="btn-container" routerLink="/offer" [routerLinkActive]="'active'" >
+          <p>Check our offer</p>
         <button>Check</button>
         </div>
         <div class="main-text-container">
@@ -62,17 +62,27 @@ import { JsonDataService } from '../../services/json-data.service';
             </div>
 
             <div class="button-container">
-            <button (click)="addToCart(element)">Buy a workout</button>
-          </div>
-        </div>
+              <button (click)="addToCart(element)">Buy a workout</button>
+              </div>
+            </div>
       </div>
       </div>
+      <app-footer></app-footer>
       `,
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
   @ViewChild(CdkVirtualScrollViewport) viewport: CdkVirtualScrollViewport;
   constructor(private cartService: CartService, private JsonDataService: JsonDataService) {}
+
+  isClicked = true;
+  isMenuOpen = true;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+
 
 
 

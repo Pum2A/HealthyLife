@@ -2,19 +2,21 @@
 
 
 .sidebar-container{
-  width: 20vw;
+  width: 15vw;
   height: 80vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   transition: all 0.3s ease;
-  background-color: $main-background-color;
+  // background-color: $main-background-color;
   z-index: 100;
+  margin-left: 2rem;
 
 
-
-  border: 1px solid #000;
+  border: 1px solid #fff;
   }
+
+
 .sidebar-container a{
   display: flex;
   justify-content: center; /* Równa odległość między elementami */
@@ -95,30 +97,37 @@ span{
   font-size: 4rem;
 }
 
+
 .menu-btn-container{
-  width: 10vw;
+  width: 100%;
   height: 12vh;
-  // display: flex;
-  // justify-content: flex-start;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  // flex-direction: column;
   margin: 3rem 0rem;
 
+
+}
+
+#shop{
+  display: flex;
+  margin-right: 2rem;
 
 }
 .menu-btn-container span{
   margin-left: 2rem;
 
   font-size: 4rem;
-  background-color: $main-background-color;
+  // border: 1px solid #fff;
+  // background-color: $main-background-color;
   padding: 1.5rem;
   cursor: pointer;
   color: #fff;
-  border-radius: 50%;
 
   &:hover{
 
-    background-color: $third-theme-color;
+    border: 1px solid #fff;
   }
 }
 
@@ -139,6 +148,11 @@ span{
 
 }
 
+@media screen and (min-width: 1200px){
+// app-shopping-card{
+//   display: none;
+// }
+}
 
 
 

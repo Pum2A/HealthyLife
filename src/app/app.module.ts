@@ -22,10 +22,11 @@ import { NgOptimizedImage } from '@angular/common';
 import { ShoppingCardComponent } from './home/components/shopping-card/shopping-card.component'
 import {  HttpClientModule } from '@angular/common/http';
 import { JsonDataService } from './home/services/json-data.service';
+import { FooterComponent } from './home/components/footer/footer.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SidebarComponent, OfferComponent, PricesComponent, RulesComponent, AboutComponent, TrainingDetailsComponent, TopbarComponent, ShoppingCardComponent],
+  declarations: [AppComponent, HomeComponent, SidebarComponent, OfferComponent, PricesComponent, RulesComponent, AboutComponent, TrainingDetailsComponent, TopbarComponent, ShoppingCardComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../../services/cart.service';
+import { JsonDataService } from '../../services/json-data.service';
+import { Product } from '../../interfaces/product.interface';
 
 @Component({
   selector: 'app-training-details',
   template: `
     <app-topbar></app-topbar>
-    <app-sidebar></app-sidebar>
-    <div class="main-container-shopping-card">
 
-      <app-shopping-card></app-shopping-card>
-    </div>
     <div class="page-margin">
 
       <div class="main-container">
@@ -51,7 +50,7 @@ import { ActivatedRoute } from '@angular/router';
               </div>
 
               <div class="button-container">
-                <button>Buy a workout</button>
+                <button (click)="addToCart(product)">Buy a workout</button>
                 <button routerLink="/home">Back to main</button>
               </div>
             </div>
@@ -63,6 +62,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TrainingDetailsComponent implements OnInit {
   trainingType: string | null = null;
+product: Product;
+
+
+  constructor(private route: ActivatedRoute, private cartService: CartService, private JsonDataService: JsonDataService,) {}
+
+
+
+  addToCart(product: Product): void {
+    // Dodaj produkt do koszyka
+    this.cartService.addToCart({ id: product.id, product: product, quantity: 1 });
+  }
+
+
+
+
+
+
+
+
 
   trainingInfo: {
     [key: string]: {
@@ -129,7 +147,6 @@ export class TrainingDetailsComponent implements OnInit {
     },
   };
 
-  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {

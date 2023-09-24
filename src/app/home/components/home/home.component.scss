@@ -3,22 +3,25 @@
 p{
   margin: 0;
 }
-
-app-sidebar{
-  position: fixed;
+app-topbar{
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
-  width: 0;
-  display: none;
+  z-index: 10111;
+  width: 100%;
+  // display: flex;
+  // text-shadow: 0px 0px 7px #fff;
 }
 
 app-shopping-card{
-  position: fixed;
+  // position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
   width: 100%;
+  display: none;
+  // text-shadow: 0px 0px 7px #fff;
+
 }
 .main-container-shopping-card{
   display: flex;
@@ -28,33 +31,38 @@ app-shopping-card{
 .main-container{
   width: 100%;
   height: 100%;
-  margin-top: 0rem;
+  margin-top: 5rem;
   display: flex;
   // justify-content: center;
   align-items: center;
   flex-direction: column;
-
+  z-index: 1000;
   background-color: $second-background-color;
   padding: 0rem 5rem;
+  // text-shadow: 0px 0px 7px #fff;
 
 }
 
+p{
+  text-shadow: 0px 0px 4px #fff;
+
+}
 .main-about-us-container{
-  max-width: 65rem;
+  max-width: 40rem;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 10rem;
+  // align-items: center;
+  margin-top: 5rem;
+  // min-height: 50rem;
   max-height: 80rem;
-  background-color: $main-background-color;
-  border-bottom-left-radius: 10rem;
-  border-bottom-right-radius: 10rem;
+
   // border-radius: 3rem;
-  padding: 5rem 5rem;
+  padding: 2rem 2rem;
+  margin: 2rem 2rem;
 }
 .main-about-us-container p{
-  // line-height: 4rem;
+  line-height: 4rem;
 
 }
 .main-text-container{
@@ -67,6 +75,7 @@ app-shopping-card{
 
   gap: 1rem;
   // margin-top: 27rem;
+  text-shadow: 0px 0px 7px #fff;
 
 
 
@@ -86,27 +95,16 @@ app-shopping-card{
 
 }
 .h1-container h1{
-  font-weight: 500;
+  font-weight: 600;
   font-size: 5rem;
   letter-spacing: .3rem;
   line-height:7rem;
   color: #fff;
   padding: 3rem 3rem;
-  border-left: 2rem solid $main-background-color;
-  // border-right: 2rem solid $main-background-color;
-  // border-top-left-radius: 5rem;
-  // border-bottom-right-radius: 5rem;
-  cursor: pointer;
   transition: all 0.3s ease;
+  // text-shadow: 0px 0px 7px #fff;
 
-  &:hover{
-    background-color: $main-second-theme-color;
-    transition: all 0.3s ease;
-    border-radius: 1rem;
-    margin: .5rem;
 
-  }
-  // margin-top: 10rem;
 }
 .btn-container{
   max-width: 85rem;
@@ -115,6 +113,7 @@ app-shopping-card{
   align-items: center;
   flex-direction: column;
   margin: 5rem 3rem 0rem;
+  text-shadow: 0px 0px 7px #fff;
 
 }
 
@@ -129,7 +128,8 @@ app-shopping-card{
 .btn-container p{
 
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  margin: 2rem 1rem;
 }
 
 .description-container{
@@ -171,7 +171,7 @@ img{
   transition: all 0.3s ease;
 
   &:hover{
-    box-shadow: 0px 0px 15px $main-second-theme-color;
+    border: 10px solid $main-second-theme-color;
     transition: all 0.3s ease;
   }
 }
@@ -210,7 +210,7 @@ button{
   max-width: 40rem;
   height: 5rem;
   font-size: 1.5rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Noto Sans Mono', monospace;
 
   cursor: pointer;
   border: none;
@@ -224,8 +224,7 @@ button{
     transition: all 0.3s ease;
     color: #fff;
     background-color: $main-second-theme-color;
-    border-top-left-radius: 3rem;
-  border-bottom-right-radius: 3rem;
+
   box-sizing: 0px 0px 15px #fff;
   }
 
@@ -239,12 +238,19 @@ button{
 
 
 
+
   .h1-container h1{
 
-    font-size: 12rem;
+    font-size: 15rem;
     line-height: 12.5rem;
     justify-content: flex-end;
     align-items: flex-end;
+    font-family: 'Noto Sans Mono', monospace;
+
+  }
+
+  .main-about-us-container{
+    max-width: 75rem;
   }
 
   .main-text-container{
@@ -264,16 +270,12 @@ button{
 
 
   }
-  app-sidebar{
+
+  app-shopping-card{
     display: block;
     // width: 10  0%;
   }
 
-
-
-
-}
-@media screen and (min-width:700px) and (max-width:1150px){
 
 
 

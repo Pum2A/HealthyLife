@@ -11,8 +11,19 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       <span class="material-symbols-outlined" (click)="toggleMenu()">
         menu
       </span>
+  <div class="shopping-icon-container">
 
+    <span id="shop" class="material-symbols-outlined" (click)="toggleShoppingCardMenu()">
+      shop
+    </span>
+  </div>
     </div>
+    <div class="shopping-card" *ngIf="isClickedShop">
+
+      <app-shopping-card>
+
+        </app-shopping-card>
+      </div>
 
   <div class="sidebar-container"  [@slideInOut]="menuState">
     <div class="close-btn-container">
@@ -38,7 +49,6 @@ check_box
 payments
 </span>
     Prices
-home
     </a>
     <a routerLink="/rules" [routerLinkActive]="'active'">
     <span class="material-symbols-outlined">
@@ -51,11 +61,11 @@ gavel
     <span class="material-symbols-outlined">
 info
 </span>
-    About us
+    About
 
     </a>
     <a >
-    <span class="material-symbols-outlined">
+    <span class="material-symbols-outlined" id="logout">
 logout
 </span>
       Logout</a>
@@ -71,7 +81,7 @@ logout
         transform: 'translate3d(0%, 0, 0)'
       })),
       state('out', style({
-        transform: 'translate3d(-100%, 0, 0)'
+        transform: 'translate3d(-120%, 0, 0)'
       })),
       transition('in => out', animate('250ms ease-out')),
       transition('out => in', animate('250ms ease-in'))
@@ -91,7 +101,8 @@ logout
 })
 export class SidebarComponent {
 
-  isClicked = true;
+  isClicked = false;
+  isClickedShop = false;
 
 
 
@@ -104,12 +115,12 @@ export class SidebarComponent {
 
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
   }
-  toggleShop(){
-    this.isClicked = !this.isClicked;
 
-    this.toggleState = this.toggleState === 'out' ? 'in' : 'out';
+
+  toggleShoppingCardMenu(){
+    this.isClickedShop = !this.isClickedShop;
+
   }
-
 
 
 }
