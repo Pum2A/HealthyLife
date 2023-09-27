@@ -9,12 +9,12 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   <div class="logo" routerLink="/home">HEALTHY</div>
   <nav>
     <ul>
-      <li><a routerLink="/home">Home</a></li>
-      <li><a routerLink="/offer">Offer</a></li>
-      <li><a routerLink="/prices">Prices</a></li>
-      <li><a routerLink="/rules">Rules</a></li>
-      <li><a routerLink="/about">About</a></li>
-      <li><a routerLink="/logout">Logout</a></li>
+      <li><a routerLink="/home" [routerLinkActive]="'active'">Home</a></li>
+      <li><a routerLink="/offer" [routerLinkActive]="'active'">Offer</a></li>
+      <li><a routerLink="/prices" [routerLinkActive]="'active'">Prices</a></li>
+      <li><a routerLink="/rules" [routerLinkActive]="'active'">Rules</a></li>
+      <li><a routerLink="/about" [routerLinkActive]="'active'">About</a></li>
+      <li><a routerLink="/logout" [routerLinkActive]="'active'">Logout</a></li>
     </ul>
   </nav>
 <span id="menu" class="material-symbols-outlined" (click)="toggleMenu()">

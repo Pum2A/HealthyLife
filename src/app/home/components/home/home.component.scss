@@ -9,6 +9,7 @@ app-topbar{
   left: 0;
   z-index: 10111;
   width: 100%;
+  border-bottom: 1px solid #020202;
   // display: flex;
   // text-shadow: 0px 0px 7px #fff;
 }
@@ -117,13 +118,7 @@ p{
 
 }
 
-.btn-container button{
-  height: 7rem;
-  border-radius: 30rem;
-  font-size: 2.5rem;
-  font-weight: 600;
-  border: 1px solid $main-background-color;
-}
+
 
 .btn-container p{
 
@@ -160,7 +155,7 @@ img{
   border-radius: 50%;
   max-width: 30rem;
     min-width: 30rem;
-    border: 10px solid $main-background-color;
+    border: 10px solid $blocks-background-color;
   object-fit: cover;
     min-height: 30rem;
     max-height: 30rem;
@@ -208,12 +203,18 @@ p{
 button{
   min-width: 25rem;
   max-width: 40rem;
-  height: 5rem;
+  // height: 3rem;
   font-size: 1.5rem;
   font-family: 'Noto Sans Mono', monospace;
+  height: 5rem;
+  font-size: 2rem;
+  font-weight: 300;
+  border: none;
+  border-radius: 1rem;
+  border: 1px solid #1b1b1b;
+  background-color: $blocks-background-color;
 
   cursor: pointer;
-  border: none;
   outline: none;
   background-color: $blocks-background-color;
   color: #e9e4e4;
@@ -225,7 +226,6 @@ button{
     color: #fff;
     background-color: $main-second-theme-color;
 
-  box-sizing: 0px 0px 15px #fff;
   }
 
 }
@@ -237,12 +237,14 @@ button{
   }
 
 
-
+  .h1-container{
+    margin-top: 25rem;
+  }
 
   .h1-container h1{
 
-    font-size: 15rem;
-    line-height: 12.5rem;
+    font-size: 12rem;
+    font-weight: 800;
     justify-content: flex-end;
     align-items: flex-end;
     font-family: 'Noto Sans Mono', monospace;

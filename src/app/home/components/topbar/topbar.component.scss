@@ -92,9 +92,7 @@
   border-radius: 50%;
 
 }
-span{
-  font-size: 4rem;
-}
+
 
 #menu{
   display: none;
@@ -113,14 +111,17 @@ width:100% ;
   // margin: 3rem 0rem;
 }
 .menu-btn-container span{
-  margin: 2rem;
-  // gap: 2rem;
-  font-size: 4rem;
-  background-color: $main-background-color;
   padding: 1rem;
   cursor: pointer;
   color: #fff;
-  // border-radius: 50%;
+  margin-right: 2rem;
+  border: 1px solid #1b1b1b;
+  transition: all 0.3 ease;
+
+  &:hover{
+    border: 1px solid #fff;
+    transition: all 0.3 ease;
+  }
 }
 
 .menu-btn-container nav{
@@ -141,6 +142,10 @@ ul,li{
 
 }
 
+nav ul li  a.active{
+  padding: .5rem 0rem;
+  border-bottom: 3px solid $main-second-theme-color;
+}
 .menu-btn-container nav ul li  a{
   margin-left: 10rem;
   cursor: pointer;
@@ -155,12 +160,18 @@ ul,li{
   font-size: 4rem;
   // width: 6rem;
   // margin: 2rem 1rem;
-  font-weight: 300;
+  font-weight: 800;
   margin-left: 3rem;
   letter-spacing:2px;
   // padding: 2rem;
   cursor: pointer;
   color: #fff;
+  transition: all 0.3s ease;
+
+  &:hover{
+    color: $main-second-theme-color;
+    transition: all 0.3s ease;
+  }
 
 }
 #menu{

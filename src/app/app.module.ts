@@ -10,7 +10,6 @@ import { environment } from 'src/environments/environment.development';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HomeComponent } from './home/components/home/home.component';
 import { HomeRoutingModule } from './home/home-routing.module';
-import { SidebarComponent } from './home/components/sidebar/sidebar.component';
 import { OfferComponent } from './home/components/offer/offer.component';
 import { PricesComponent } from './home/components/prices/prices.component';
 import { RulesComponent } from './home/components/rules/rules.component';
@@ -26,7 +25,7 @@ import { FooterComponent } from './home/components/footer/footer.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SidebarComponent, OfferComponent, PricesComponent, RulesComponent, AboutComponent, TrainingDetailsComponent, TopbarComponent, ShoppingCardComponent, FooterComponent],
+  declarations: [AppComponent, HomeComponent, OfferComponent, PricesComponent, RulesComponent, AboutComponent, TrainingDetailsComponent, TopbarComponent, ShoppingCardComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
