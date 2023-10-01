@@ -1,8 +1,8 @@
 [
-  { "id": 1, "name": "Legs Training plan", "price": 22.50 },
-  { "id": 2, "name": "Arms training plan", "price": 27.00 },
-  { "id": 3, "name": "Biceps training plan", "price": 29.25 },
-  { "id": 4, "name": "Triceps training plan", "price": 49.25 },
-  { "id": 5, "name": "Back training plan", "price": 19.25 },
-  { "id": 6, "name": "Chest training plan", "price": 39.25 }
+  { "id": 1, "name": "Legs Training plan", "price": 30.32, "description": "A training plan focused on lower body exercises, targeting muscles in the legs and glutes. It includes a variety of strength and endurance exercises.",  "price": 22.50 },
+  { "id": 2, "name": "Arms training plan", "price": 19.51, "description": "A training plan that emphasizes arm exercises, including biceps and triceps workouts. It helps in building arm strength and definition.", "price": 27.00 },
+  { "id": 3, "name": "Biceps training plan", "price": 53.20, "description": "A specialized training plan that focuses on developing bicep muscles. It includes various exercises to help build strong and well-defined biceps.", "price": 29.25 },
+  { "id": 4, "name": "Triceps training plan", "price": 60.50, "description": "A training plan that targets triceps exercises. The triceps make up a significant portion of the arm muscles, and this plan aids in strengthening them.", "price": 49.25 },
+  { "id": 5, "name": "Back training plan", "price": 15.78, "description": "A training plan that concentrates on the development of back muscles. It includes a variety of exercises to increase back strength and stability.", "price": 19.25 },
+  { "id": 6, "name": "Chest training plan", "price": 33.55, "description": "A training plan that focuses on enhancing chest muscles. It helps in building muscle mass and definition in the chest area.", "price": 39.25 }
 ]

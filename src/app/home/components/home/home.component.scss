@@ -10,8 +10,6 @@ app-topbar{
   z-index: 10111;
   width: 100%;
   border-bottom: 1px solid #020202;
-  // display: flex;
-  // text-shadow: 0px 0px 7px #fff;
 }
 
 app-shopping-card{
@@ -21,7 +19,6 @@ app-shopping-card{
   z-index: 10;
   width: 100%;
   display: none;
-  // text-shadow: 0px 0px 7px #fff;
 
 }
 .main-container-shopping-card{
@@ -40,14 +37,10 @@ app-shopping-card{
   z-index: 1000;
   background-color: $second-background-color;
   padding: 0rem 5rem;
-  // text-shadow: 0px 0px 7px #fff;
 
 }
 
-p{
-  text-shadow: 0px 0px 4px #fff;
 
-}
 .main-about-us-container{
   max-width: 40rem;
   width: 100%;
@@ -205,7 +198,7 @@ button{
   max-width: 40rem;
   // height: 3rem;
   font-size: 1.5rem;
-  font-family: 'Noto Sans Mono', monospace;
+  font-family: 'Source Sans 3', sans-serif;
   height: 5rem;
   font-size: 2rem;
   font-weight: 300;
@@ -244,15 +237,15 @@ button{
   .h1-container h1{
 
     font-size: 12rem;
-    font-weight: 800;
+    font-weight: 700;
     justify-content: flex-end;
     align-items: flex-end;
-    font-family: 'Noto Sans Mono', monospace;
+    font-family: 'Source Sans 3', sans-serif;
 
   }
 
   .main-about-us-container{
-    max-width: 75rem;
+    max-width: 55rem;
   }
 
   .main-text-container{

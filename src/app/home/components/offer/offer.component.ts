@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
       </div>
       <div class="main-content-container">
         <div class="main-content">
-          <div *ngFor="let item of offerData" >
+          <div class="items-content" *ngFor="let item of offerData" >
           <h3>{{ item.name }}</h3>
   <p>{{ item.description }}</p>
           </div>

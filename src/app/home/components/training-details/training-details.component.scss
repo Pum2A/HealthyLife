@@ -58,12 +58,12 @@ app-shopping-card{
   align-items: center;
 }
 .h2-container h2{
-  font-size: 4rem;
-  font-weight: bold;
-  letter-spacing: 3px;
-  line-height: 4.5rem;
-  font-family: 'Noto Sans Mono', monospace;
-  margin-left: 2.5rem;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 5.5rem;
+  text-align: justify;
+  font-family: 'Source Sans 3', sans-serif;
+  // margin-left: 2.5rem;
 
   color: $main-text-color;
 }
@@ -114,7 +114,7 @@ button{
   max-width: 40rem;
   height: 5rem;
   font-size: 1.5rem;
-  font-family: 'Noto Sans Mono', monospace;
+  font-family: 'Source Sans 3', sans-serif;
 
   cursor: pointer;
   border: none;
@@ -134,8 +134,8 @@ button{
 }
 
 button:last-child{
-  margin-left: 0rem;
-  min-width: 18rem;
+  margin-left: 2rem;
+  min-width: 12rem;
 }
 
 @media screen and (min-width: 1200px){
@@ -154,6 +154,8 @@ button:last-child{
 
   button:last-child{
     margin-left: 2rem;
+    min-width: 18rem;
+
   }
 
 }
@@ -167,5 +169,7 @@ button:last-child{
 
   button:last-child{
     margin-left: 2rem;
+    min-width: 12rem;
+
   }
 }

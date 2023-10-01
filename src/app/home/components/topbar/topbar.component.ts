@@ -83,7 +83,7 @@ Logout</a>
   animations: [
     trigger('slideInOut', [
       state('in', style({
-        transform: 'translate3d(8%, 20%, 0)'
+        transform: 'translate3d(0%, 20%, 0)'
       })),
       state('out', style({
         transform: 'translate3d(-100%, 20%, 0)'

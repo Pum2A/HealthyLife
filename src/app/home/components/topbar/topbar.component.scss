@@ -7,7 +7,7 @@
   flex-direction: column;
   gap: 2rem;
   transition: all 0.3s ease;
-  background-color: $main-background-color;
+  background-color: $blocks-background-color;
   z-index: 100;
   position: absolute;
 
@@ -137,18 +137,27 @@ ul,li{
 
 .menu-btn-container nav ul{
   display: flex;
-  color: #fff;
   font-size: 2rem;
 
 }
 
 nav ul li  a.active{
-  padding: .5rem 0rem;
-  border-bottom: 3px solid $main-second-theme-color;
+  padding: .8rem .3rem;
+  border-bottom: 4px solid $main-second-theme-color;
+
 }
 .menu-btn-container nav ul li  a{
   margin-left: 10rem;
   cursor: pointer;
+
+  color: #fff;
+
+  &:hover{
+    color: $main-second-theme-color;
+    transition: all 0.3s ease;
+  }
+
+
 
 
 }
@@ -158,12 +167,8 @@ nav ul li  a.active{
   justify-content: center;
   align-items: center;
   font-size: 4rem;
-  // width: 6rem;
-  // margin: 2rem 1rem;
-  font-weight: 800;
+  font-weight: 700;
   margin-left: 3rem;
-  letter-spacing:2px;
-  // padding: 2rem;
   cursor: pointer;
   color: #fff;
   transition: all 0.3s ease;
