@@ -2,5 +2,93 @@
 ;
 .main-background{
   background-color: $second-background-color;
-  height: 89.6vh;
+  height: auto;
+}
+
+*{
+  color: #fff;
+}
+
+.h2-container{
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.h2-container h2{
+  font-size: 6rem;
+  font-weight: 800;
+}
+
+.main-content-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  padding: 5rem 0rem;
+  // flex-wrap: wrap;
+  // align-items: ;
+
+}
+.main-content{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+.items-content{
+  display:flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: justify;
+  padding: 5rem 5rem;
+  max-width: 50%;
+  min-height: 35rem;
+  max-height: 90rem;
+  background-color: $blocks-background-color;
+  transition: all 0.3s ease;
+
+
+
+}
+
+h3{
+  font-size: 3.5rem;
+  font-family: 'Source Sans 3', sans-serif !important;
+  padding: 2rem 0rem;
+  font-weight: 800;
+  text-align: justify;
+
+}
+
+p{
+  font-size: 1.8rem;
+  min-height: 2rem;
+  font-weight: 200;
+  padding: 2rem 0rem;
+  text-align: justify;
+}
+
+
+@media screen and (max-width: 1000px){
+  .main-background{
+    height: auto;
+  }
+
+
+.items-content{
+  max-width: 70%;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 60rem;
+  max-height: 80rem;
+}
 }

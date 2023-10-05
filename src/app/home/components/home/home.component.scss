@@ -100,16 +100,16 @@ app-shopping-card{
 
 
 }
-.btn-container{
-  max-width: 85rem;
-  display: flex;
-  justify-content: center ;
-  align-items: center;
-  flex-direction: column;
-  margin: 5rem 3rem 0rem;
-  text-shadow: 0px 0px 7px #fff;
+// .btn-container{
+//   max-width: 85rem;
+//   display: flex;
+//   justify-content: center ;
+//   align-items: center;
+//   flex-direction: column;
+//   margin: 5rem 3rem 0rem;
+//   text-shadow: 0px 0px 7px #fff;
 
-}
+// }
 
 
 
@@ -143,25 +143,122 @@ app-shopping-card{
   border: none;
 }
 
-img{
+.main-description-container{
+  margin-top: 10rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 50rem;
+  // background-color: red;
+}
 
-  border-radius: 50%;
-  max-width: 30rem;
-    min-width: 30rem;
-    border: 10px solid $blocks-background-color;
-  object-fit: cover;
-    min-height: 30rem;
-    max-height: 30rem;
+.main-description-container .left-site-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  // background-color: blue;
+}
 
-  margin: 2rem 0rem 2rem 0rem;
+h2 span{
+  display: block;
+}
+
+
+.main-description-container .right-site-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  // background-color: green;
+}
+
+.main-description-container .left-site-container h2{
+  // width: 20.8125rem;
+// height: 9.99513rem;
+// flex-shrink: 0;
+color: #FFF;
+// width: 35rem;
+text-align: left;
+font-family: Outfit, sans-serif;
+font-size: 5rem;
+font-weight: 500;
+line-height: 98.28%; /* 3.93119rem */
+}
+
+.left-site-container .btn-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // flex-direction: column;
+  width: 100%;
+
+}
+.left-site-container .btn-container button{
+  margin: 1rem 1rem 2rem 1rem;
+  min-width: 13rem;
+  max-width: 15rem;
+  font-weight: 400;
+  font-size: 1.6rem;
+  height: 5.5rem;
+  color: #fff;
+  background-color:  #050505;
+  border: 1px solid #1b1b1b;
+  font-family: Outfit;
   cursor: pointer;
-  // box-shadow: 0px 0px 5px #fff;
   transition: all 0.3s ease;
 
+
+
   &:hover{
-    border: 10px solid $main-second-theme-color;
+    background-color: #020202;
+    color: #fff;
     transition: all 0.3s ease;
   }
+}
+.left-site-container .btn-container button:last-child{
+border: 1px solid #fff;
+background-color: #000;
+color: #fff;
+&:hover{
+  background-color: #0e0d0d;
+}
+}
+
+
+.main-image{
+  max-width: 50rem;
+  max-height: 40rem;
+  margin: 2rem 0rem;
+  display: none;
+  border: 1px solid #fff;
+  // margin-right: 20rem;
+    // min-width: 20rem;
+  }
+
+
+img{
+
+  // border-radius: 1rem;
+  // // max-width: 30rem;
+  //   // min-width: 30rem;
+  // object-fit: cover;
+  //   min-height: 30rem;
+  //   max-height: 30rem;
+
+  // margin: 2rem 0rem 2rem 0rem;
+  // cursor: pointer;
+  // transition: all 0.3s ease;
+
+  // &:hover{
+  //   border: 10px solid $main-second-theme-color;
+  //   padding: 1rem;
+  //   transition: all 0.3s ease;
+  // }
 }
 
 .bold{
@@ -193,41 +290,91 @@ p{
   color: #fff;
 
 }
-button{
-  min-width: 25rem;
-  max-width: 40rem;
-  // height: 3rem;
-  font-size: 1.5rem;
-  font-family: 'Source Sans 3', sans-serif;
-  height: 5rem;
-  font-size: 2rem;
-  font-weight: 300;
-  border: none;
-  border-radius: 1rem;
-  border: 1px solid #1b1b1b;
-  background-color: $blocks-background-color;
 
-  cursor: pointer;
-  outline: none;
-  background-color: $blocks-background-color;
-  color: #e9e4e4;
-  transition: all 0.3s ease;
-  margin: 2rem 0rem;
-
-  &:hover{
-    transition: all 0.3s ease;
-    color: #fff;
-    background-color: $main-second-theme-color;
-
-  }
-
-}
 
 @media screen and (min-width: 1200px){
   .main-text-container{
     justify-content: space-between;
 
   }
+
+
+
+  .left-site-container .btn-container button:last-child{
+  border: 1px solid #fff;
+  background-color: #000;
+  color: #fff;
+  &:hover{
+    background-color: #0e0d0d;
+  }
+  }
+
+
+
+
+  .main-description-container .left-site-container h2{
+  color: #FFF;
+  text-align: left;
+  font-family: Outfit, sans-serif;
+  font-size: 8rem;
+  margin: 3rem 0rem;
+  font-weight: 500;
+  line-height: 98.28%; /* 3.93119rem */
+  }
+
+  .main-image{
+    display: flex;
+    max-width: 50rem;
+  max-height: 50rem;
+  margin: 2rem 0rem;
+
+  }
+  .main-description-container{
+    margin-top: 10rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 50rem;
+    // background-color: red;
+  }
+
+  .left-site-container .btn-container{
+    width: 44rem;
+    justify-content: flex-start;
+    margin: 2rem 0rem;
+  }
+
+  .left-site-container .btn-container button{
+    margin: 0rem 2rem;
+    width: 16rem;
+    font-size: 1.5rem;
+
+
+
+  }
+
+  .main-description-container .left-site-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    // background-color: blue;
+  }
+
+
+  .main-description-container .right-site-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    // background-color: green;
+  }
+
+
 
 
   .h1-container{

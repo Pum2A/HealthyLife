@@ -17,15 +17,33 @@ import { JsonDataService } from '../../services/json-data.service';
     <!-- <app-sidebar></app-sidebar> -->
     <!-- <div class="main-container-shopping-card"> -->
 
-      <!-- <app-shopping-card></app-shopping-card> -->
+    <!-- <app-shopping-card></app-shopping-card> -->
     <!-- </div> -->
     <div class="main-container">
-
-      <div class="h1-container">
+      <!-- <div class="h1-container">
         <h1>HEALTHY</h1>
+        </div> -->
+      <div class="main-description-container">
+        <div class="left-site-container">
+          <h2>
+            <span>Biggest </span>
+            <span>Fitness </span>
+            <span>Community </span>
+          </h2>
+          <div class="btn-container">
+            <button>COMMUNITY</button>
+            <button>STAFF</button>
+          </div>
         </div>
-
-        <div class="main-about-us-container">
+        <div class="right-site-container">
+          <img
+            class="main-image"
+            src="../../../../assets/images/test.webp"
+            alt=""
+          />
+        </div>
+      </div>
+      <!-- <div class="main-about-us-container">
           <p>
             Welcome to
             <b>
@@ -38,15 +56,19 @@ import { JsonDataService } from '../../services/json-data.service';
             and lots of inspiration to help you achieve your health and fitness
             goals.
           </p>
-        </div>
-        <div class="btn-container" routerLink="/offer" [routerLinkActive]="'active'" >
-          <p>Check our offer</p>
+        </div> -->
+      <div
+        class="btn-container"
+        routerLink="/offer"
+        [routerLinkActive]="'active'"
+      >
+        <p>Check our offer</p>
         <button>Check</button>
-        </div>
-        <div class="main-text-container">
-          <div *ngFor="let element of data">
-            <div class="img-container">
-              <img
+      </div>
+      <div class="main-text-container">
+        <div *ngFor="let element of data">
+          <div class="img-container">
+            <img
               class="block"
               [ngSrc]="element.photo"
               alt="{{ element.information }}"
@@ -54,26 +76,29 @@ import { JsonDataService } from '../../services/json-data.service';
               width="300"
               height="400"
               [routerLink]="['/details', element.details]"
-              />
-            </div>
-            <div class="description-container">
-              <p>{{ element.information }}</p>
-              <a [routerLink]="['/details', element.details]">Check this plan!</a>
-            </div>
+            />
+          </div>
+          <div class="description-container">
+            <p>{{ element.information }}</p>
+            <a [routerLink]="['/details', element.details]">Check this plan!</a>
+          </div>
 
-            <div class="button-container">
-              <button (click)="addToCart(element)">Buy a workout</button>
-              </div>
-            </div>
+          <div class="button-container">
+            <button (click)="addToCart(element)">Buy a workout</button>
+          </div>
+        </div>
       </div>
-      </div>
-      <app-footer></app-footer>
-      `,
+    </div>
+    <app-footer></app-footer>
+  `,
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
   @ViewChild(CdkVirtualScrollViewport) viewport: CdkVirtualScrollViewport;
-  constructor(private cartService: CartService, private JsonDataService: JsonDataService) {}
+  constructor(
+    private cartService: CartService,
+    private JsonDataService: JsonDataService,
+  ) {}
 
   isClicked = true;
   isMenuOpen = true;
@@ -82,80 +107,75 @@ export class HomeComponent {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-
-
-
-
   addToCart(product: Product): void {
     const existingItem = this.cartService.getCartItem(product.id);
 
     if (existingItem) {
       existingItem.quantity++;
-      this.cartService.addToCart({ id: product.id, product: product, quantity: 1 });
+      this.cartService.addToCart({
+        id: product.id,
+        product: product,
+        quantity: 1,
+      });
     } else {
       // Pobierz dane z lokalnego magazynu
       const jsonData = JSON.parse(localStorage.getItem('offerData'));
 
       // Znajdź odpowiednią nazwę ćwiczenia na podstawie ID
-      const exercise = jsonData.find(item => item.id === product.id);
+      const exercise = jsonData.find((item) => item.id === product.id);
 
       if (exercise) {
         product.name = exercise.name;
-        this.cartService.addToCart({ id: product.id, product: product, quantity: 1 });
+        this.cartService.addToCart({
+          id: product.id,
+          product: product,
+          quantity: 1,
+        });
       }
     }
   }
-
 
   removeFromCart(product: Product): void {
     // Usuń produkt z koszyka
     this.cartService.removeFromCart(product);
   }
 
-
-
-
-
-
   data: any[] = [
     {
-      id:1,
+      id: 1,
       photo: 'assets/images/legsPhoto.webp',
       information: 'Legs training plan',
       details: 'legs',
     },
     {
-      id:2,
+      id: 2,
       photo: 'assets/images/armsPhoto.webp',
       information: 'Arms training plan',
       details: 'arms',
     },
     {
-      id:3,
+      id: 3,
       photo: 'assets/images/bicepsPhoto.webp',
       information: 'Biceps training plan',
       details: 'biceps',
     },
     {
-      id:4,
+      id: 4,
       photo: 'assets/images/tricepsPhoto.webp',
       information: 'Triceps training plan',
       details: 'triceps',
     },
     {
-      id:5,
+      id: 5,
       photo: 'assets/images/backPhoto.webp',
       information: 'Back training plan',
       details: 'back',
     },
     {
-      id:6,
+      id: 6,
       photo: 'assets/images/chestPhoto.webp',
       information: 'Chest training plan',
       details: 'chest',
     },
   ];
-
-
-
 }
