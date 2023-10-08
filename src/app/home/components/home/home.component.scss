@@ -2,6 +2,7 @@
 
 p{
   margin: 0;
+  font-family: 'Outfit', sans-serif  !important;
 }
 app-topbar{
   position: absolute;
@@ -36,7 +37,7 @@ app-shopping-card{
   flex-direction: column;
   z-index: 1000;
   background-color: $second-background-color;
-  padding: 0rem 5rem;
+  // padding: 0rem 5rem;
 
 }
 
@@ -56,24 +57,11 @@ app-shopping-card{
   margin: 2rem 2rem;
 }
 .main-about-us-container p{
-  line-height: 4rem;
+  // line-heigh t: 4rem;
 
 }
-.main-text-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  max-width: 85rem;
-  // height: auto;
-
-  gap: 1rem;
-  // margin-top: 27rem;
-  text-shadow: 0px 0px 7px #fff;
 
 
-
-}
 
 .h1-container{
   display: flex;
@@ -100,48 +88,156 @@ app-shopping-card{
 
 
 }
-// .btn-container{
-//   max-width: 85rem;
-//   display: flex;
-//   justify-content: center ;
-//   align-items: center;
-//   flex-direction: column;
-//   margin: 5rem 3rem 0rem;
-//   text-shadow: 0px 0px 7px #fff;
-
-// }
 
 
 
-.btn-container p{
-
-  font-weight: 500;
-  font-size: 2.5rem;
-  margin: 2rem 1rem;
+.main-text-container{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.description-container{
+.main-text-container .img-container {
+
+  margin: 2rem 0rem;
+}
+.main-text-container .img-container img{
+  object-fit: cover;
+}
+
+
+.main-text-container .description-container p {
+  font-weight: 100;
+  font-size: 2rem;
+
+}
+
+
+
+.main-text-container .description-container{
+  margin: 1.5rem 0rem;
+}
+.main-text-container .description-container a{
+  font-size: 2.5rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover{
+    color: $main-second-theme-color;
+    transition: all 0.3s ease;
+  }
+}
+.main-text-container .description-container .span-weight{
+  font-weight: 400;
+  display: block;
+  line-height: 100%;
+}
+.span-block{
+  display: block;
+}
+
+.main-text-container .block-container div{
+  width: 333px;
+  height: 300px;
+  background-color: #060606;
   display: flex;
   justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover{
+    background-color: #121212;
+    transition: all 0.3s ease;
+  }
+}
+.main-text-container .block-container div span{
+  color: #fff;
+  font-size: 4.8rem;
+  line-height: 100%;
+  cursor: pointer;
+}
+
+
+.back::first-line{
+  font-weight: 100;
+}
+.legs::first-line{
+  font-weight: 100;
+}
+.biceps::first-line{
+  font-weight: 100;
+}
+
+.main-text-container  button{
+  margin: 0rem 0rem 2rem 0rem;
+  width: 15rem;
+
+  font-weight: 400;
+  font-size: 1.6rem;
+  height: 5.5rem;
+  color: #fff;
+  background-color:  #000;
+  border: 1px solid #fff;
+  font-family: Outfit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+
+
+  &:hover{
+    background-color: #121212;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+}
+
+
+.legs, .arms, .biceps, .triceps, .back, .chest{
+  white-space: pre-line;
+}
+
+
+
+.offer-container{
+  // margin-top: 10rem;
+  width: 100%;
+  display: flex;
   align-items: center;
   flex-direction: column;
-  text-align: center;
-
+  padding: 10rem;
 }
 
-.description-container p{
 
-  margin: 1rem 0rem;
+.offer-container button{
+  margin: 3rem 1rem 2rem 0rem;
+  width: 25rem;
 
+  font-weight: 400;
+  font-size: 1.6rem;
+  height: 5.5rem;
+  color: #fff;
+  background-color:  #050505;
+  border: 1px solid #1b1b1b;
+  font-family: Outfit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+
+
+  &:hover{
+    background-color: #020202;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
 }
-.img-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 3rem 0rem;
-  outline: none;
-  border: none;
-}
+
+
+
 
 .main-description-container{
   margin-top: 10rem;
@@ -149,8 +245,7 @@ app-shopping-card{
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 50rem;
-  // background-color: red;
+  padding: 10rem;
 }
 
 .main-description-container .left-site-container{
@@ -160,11 +255,17 @@ app-shopping-card{
   flex-direction: column;
   width: 100%;
   height: 100%;
-  // background-color: blue;
 }
 
 h2 span{
   display: block;
+}
+p span{
+  display: block;
+  line-height: 98.28%;
+
+  // line-height: 4rem;
+
 }
 
 
@@ -178,24 +279,20 @@ h2 span{
 }
 
 .main-description-container .left-site-container h2{
-  // width: 20.8125rem;
-// height: 9.99513rem;
-// flex-shrink: 0;
 color: #FFF;
-// width: 35rem;
 text-align: left;
 font-family: Outfit, sans-serif;
 font-size: 5rem;
 font-weight: 500;
-line-height: 98.28%; /* 3.93119rem */
+line-height: 98.28%;
 }
 
 .left-site-container .btn-container{
   display: flex;
   justify-content: center;
   align-items: center;
-  // flex-direction: column;
   width: 100%;
+  margin: 1rem 0rem;
 
 }
 .left-site-container .btn-container button{
@@ -232,7 +329,8 @@ color: #fff;
 
 .main-image{
   max-width: 50rem;
-  max-height: 40rem;
+  max-height: 30rem;
+  object-fit: cover;
   margin: 2rem 0rem;
   display: none;
   border: 1px solid #fff;
@@ -240,26 +338,28 @@ color: #fff;
     // min-width: 20rem;
   }
 
-
-img{
-
-  // border-radius: 1rem;
-  // // max-width: 30rem;
-  //   // min-width: 30rem;
-  // object-fit: cover;
-  //   min-height: 30rem;
-  //   max-height: 30rem;
-
-  // margin: 2rem 0rem 2rem 0rem;
-  // cursor: pointer;
-  // transition: all 0.3s ease;
-
-  // &:hover{
-  //   border: 10px solid $main-second-theme-color;
-  //   padding: 1rem;
-  //   transition: all 0.3s ease;
-  // }
+.offer-container .left-site-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
+.offer-container .left-site-container  p {
+  font-size: 5.5rem;
+  font-weight: 500;
+}
+.offer-container .right-site-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+
 
 .bold{
   font-weight: bold;
@@ -270,15 +370,6 @@ img{
 a{
   text-decoration: none;
   color: #fff;
-  font-size: 1.7rem;
-  transition: all 0.3s ease;
-  font-weight: 200;
-
-  &:hover{
-    color: $main-second-theme-color;
-    transition: all 0.3s ease;
-  }
-
 
 }
 p{
@@ -293,10 +384,7 @@ p{
 
 
 @media screen and (min-width: 1200px){
-  .main-text-container{
-    justify-content: space-between;
 
-  }
 
 
 
@@ -338,6 +426,57 @@ p{
     height: 50rem;
     // background-color: red;
   }
+
+
+  .main-text-container{
+    width: 75%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    // justify-content: space-between;
+    align-items: center;
+    // padding: 0rem 7rem;
+    gap: 5rem;
+  }
+
+
+  .offer-container{
+    flex-direction: row;
+
+  }
+
+
+  .offer-container .left-site-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+
+  }
+  .offer-container .left-site-container p {
+    color: #FFF;
+    text-align: left;
+    font-family: Outfit, sans-serif;
+    font-size: 8rem;
+    margin: 3rem 0rem;
+    font-weight: 500;
+    line-height: 98.28%;
+  }
+
+
+  .offer-container .right-site-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 50%;
+    max-width: 50%;
+      height: 100%;
+    }
 
   .left-site-container .btn-container{
     width: 44rem;
@@ -395,18 +534,7 @@ p{
     max-width: 55rem;
   }
 
-  .main-text-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    max-width: 85rem;
 
-    gap: 3rem;
-
-
-
-  }
   .main-container{
     height: 100%;
 

@@ -43,46 +43,54 @@ import { JsonDataService } from '../../services/json-data.service';
           />
         </div>
       </div>
-      <!-- <div class="main-about-us-container">
-          <p>
-            Welcome to
-            <b>
 
-              Healthy
-            </b>
-             I am very excited that you are here. Our
-            site is the perfect place for anyone passionate about fitness and
-            healthy living. Here you will find useful information, workout plans
-            and lots of inspiration to help you achieve your health and fitness
-            goals.
+      <div class="offer-container">
+        <div class="left-site-container">
+          <p>
+            <span> Extremly </span>
+            <span> Customized </span>
+            <span> Workouts </span>
           </p>
-        </div> -->
-      <div
-        class="btn-container"
-        routerLink="/offer"
-        [routerLinkActive]="'active'"
-      >
-        <p>Check our offer</p>
-        <button>Check</button>
+          <div class="btn-container">
+
+            <button routerLink="/offer" [routerLinkActive]="'active'">
+              Check
+            </button>
+          </div>
+        </div>
+        <div class="right-site-container"></div>
       </div>
       <div class="main-text-container">
         <div *ngFor="let element of data">
-          <div class="img-container">
-            <img
-              class="block"
-              [ngSrc]="element.photo"
-              alt="{{ element.information }}"
-              lazyLoad
-              width="300"
-              height="400"
-              [routerLink]="['/details', element.details]"
-            />
+          <div class="block-container">
+
+             <div [routerLink]="['/details', element.details]">
+
+               {{ element.block }}
+               <span [innerHTML]="element.information" class="{{element.details}}"></span>
+              </div>
+
+
+
+
           </div>
           <div class="description-container">
-            <p>{{ element.information }}</p>
-            <a [routerLink]="['/details', element.details]">Check this plan!</a>
-          </div>
+            <a [routerLink]="['/details', element.details]">
 
+
+                Check
+
+
+              </a>
+              <p class="info-about-p">
+
+                to get more
+                <span class="span-block">
+
+                  info about
+                </span>
+            </p>
+          </div>
           <div class="button-container">
             <button (click)="addToCart(element)">Buy a workout</button>
           </div>
@@ -140,42 +148,51 @@ export class HomeComponent {
     this.cartService.removeFromCart(product);
   }
 
+
+
+
   data: any[] = [
     {
       id: 1,
       photo: 'assets/images/legsPhoto.webp',
-      information: 'Legs training plan',
+      information: "30 days\nof\nLegs",
       details: 'legs',
+      block: '',
     },
     {
       id: 2,
       photo: 'assets/images/armsPhoto.webp',
-      information: 'Arms training plan',
+      information: 'PUSH\nPULL\nLEGS',
       details: 'arms',
+      block: '',
     },
     {
       id: 3,
       photo: 'assets/images/bicepsPhoto.webp',
-      information: 'Biceps training plan',
+      information: 'flex\nDAY',
       details: 'biceps',
+      block: '',
     },
     {
       id: 4,
       photo: 'assets/images/tricepsPhoto.webp',
-      information: 'Triceps training plan',
+      information: 'FBW\nPLAN',
       details: 'triceps',
+      block: '',
     },
     {
       id: 5,
       photo: 'assets/images/backPhoto.webp',
-      information: 'Back training plan',
+      information: '7 days \nof\nARMS',
       details: 'back',
+      block: '',
     },
     {
       id: 6,
       photo: 'assets/images/chestPhoto.webp',
-      information: 'Chest training plan',
+      information: 'OLYMPIAN\nTRAINING\nSET',
       details: 'chest',
+      block: '',
     },
   ];
 }
