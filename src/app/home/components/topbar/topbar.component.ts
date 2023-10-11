@@ -11,7 +11,6 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     <ul>
       <li><a routerLink="/home" [routerLinkActive]="'active'">Home</a></li>
       <li><a routerLink="/offer" [routerLinkActive]="'active'">Offer</a></li>
-      <li><a routerLink="/prices" [routerLinkActive]="'active'">Prices</a></li>
       <li><a routerLink="/rules" [routerLinkActive]="'active'">Rules</a></li>
       <li><a routerLink="/about" [routerLinkActive]="'active'">About</a></li>
       <li><a routerLink="/logout" [routerLinkActive]="'active'">Logout</a></li>

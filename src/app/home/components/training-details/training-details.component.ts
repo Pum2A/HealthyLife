@@ -17,16 +17,7 @@ import { Product } from '../../interfaces/product.interface';
             <div class="h2-container">
               <h2>{{ trainingInfo[trainingType]?.title }}</h2>
             </div>
-            <div class="img-container">
-              <img
-              class="block"
-              ngSrc="{{ trainingInfo[trainingType]?.image }}"
-              alt="{{ trainingInfo[trainingType]?.title }}"
-              width="300"
-              height="300"
-              lazyLoad
-              />
-            </div>
+
             <div class="description-container">
               <p>
                 <span class="bold">Description</span> <br>

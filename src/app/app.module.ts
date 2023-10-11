@@ -6,12 +6,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthModule } from './auth/modules/auth.module';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { environment } from 'src/environments/environment.development';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HomeComponent } from './home/components/home/home.component';
 import { HomeRoutingModule } from './home/home-routing.module';
 import { OfferComponent } from './home/components/offer/offer.component';
-import { PricesComponent } from './home/components/prices/prices.component';
 import { RulesComponent } from './home/components/rules/rules.component';
 import { AboutComponent } from './home/components/about/about.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -25,7 +23,7 @@ import { FooterComponent } from './home/components/footer/footer.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, OfferComponent, PricesComponent, RulesComponent, AboutComponent, TrainingDetailsComponent, TopbarComponent, ShoppingCardComponent, FooterComponent],
+  declarations: [AppComponent, HomeComponent, OfferComponent, RulesComponent, AboutComponent, TrainingDetailsComponent, TopbarComponent, ShoppingCardComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -9,15 +9,41 @@ import { HttpClient } from '@angular/common/http';
   template: `
     <app-topbar></app-topbar>
     <div class="main-background">
-      <div class="h2-container">
-        <h2>OUR OFFER</h2>
-      </div>
-      <div class="main-content-container">
-        <div class="main-content">
-          <div class="items-content" *ngFor="let item of offerData" >
-          <h3>{{ item.name }}</h3>
-  <p>{{ item.description }}</p>
+      <div class="margin">
+        <div class="head-container-second">
+          <div class="h2-container">
+            <h2>
+              <span> Check </span>
+              <span> Now </span>
+              <span>Our offer!</span>
+            </h2>
           </div>
+          <div class="img-container">
+
+            <img src="../../../../assets/images/armsPhoto.webp" alt="" />
+          </div>
+        </div>
+        <div class="main-content-container">
+          <div class="head-container">
+            <div class="h3-container">
+              <h3>
+                <span>Offer List</span>
+              </h3>
+              <p>(offer for {{ date | date: 'dd-MM-y' }})</p>
+            </div>
+          </div>
+          <div class="main-container">
+            <div class="main-content">
+              <div class="items-content" *ngFor="let item of offerData ">
+                <h4 >{{ item.name }} </h4>
+                <p>{{ item.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="more-info-container">
+
+          <button routerLink="/home">MORE INFO</button>
         </div>
       </div>
     </div>
@@ -27,6 +53,7 @@ import { HttpClient } from '@angular/common/http';
 export class OfferComponent implements OnInit {
   trainingType: string | null = null;
   product: Product;
+  date = new Date();
 
   offerData: Product[] = []; // Przechowuje dane oferty jako tablicę produktów
 
@@ -41,9 +68,7 @@ export class OfferComponent implements OnInit {
     // Wywołaj metodę getOfferData z serwisu JsonDataService
     this.JsonDataService.getOfferData().subscribe((data) => {
       this.offerData = data; // Przypisz dane oferty do offerData
-      console.log(data)
+      console.log(data);
     });
   }
-
-
 }
