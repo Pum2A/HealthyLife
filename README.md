@@ -52,6 +52,7 @@ NgRX - where in this case it was my first project in which I used this technolog
 This is my first larger project that I have created.
 
 
+![image](https://github.com/Pum2A/HealthyLife/assets/95776599/f2d20f10-ddb1-45ef-9264-d036d0d832d6)
 
 
 
