@@ -10,13 +10,7 @@ import { AuthRoutingModule } from '../auth/auth-routing.module';
 import { LoginComponent } from '../auth/components/login/login.component';
 import { RegisterComponent } from '../auth/components/register/register.component';
 
-const authRoutes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  // ... inne ścieżki dla autoryzacji
-];
-
-const homeRoutes: Routes = [
+const routes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'offer', component: OfferComponent
@@ -37,12 +31,11 @@ const homeRoutes: Routes = [
   {
 path:'payment', component:PaymentComponent
   },
-  ...authRoutes,
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(homeRoutes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class HomeRoutingModule {}

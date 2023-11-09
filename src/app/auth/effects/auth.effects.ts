@@ -12,12 +12,9 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(AuthActions.registerAction),
       switchMap(action => {
-        // Wyłącz przycisk
         const disableAction = AuthActions.setRegisterButtonDisabled({ disabled: true });
         return of(disableAction).pipe(
-          // Tutaj wykonaj rzeczywistą logikę rejestracji, np. HTTP żądanie
-          // W razie sukcesu wyślij akcję registerSuccess i przywróć przycisk
-          // W razie błędu wyślij akcję registerFailure i przywróć przycisk
+
         );
       })
     )
@@ -26,10 +23,8 @@ export class AuthEffects {
   this.actions$.pipe(
     ofType(AuthActions.loginAction),
     switchMap(action => {
-      const { username, password, email } = action.user; // Pobierz dane logowania z akcji
+      const { username, password, email } = action.user;
 
-      // Tutaj wykonaj rzeczywistą logikę logowania, np. HTTP żądanie
-      // Przykładowa logika: zakładamy, że udane logowanie to username 'admin' i hasło 'admin'
       if (username === 'Edward' && password === 'HardcorePassword123!' && email === 'demo@account.com') {
         return of(AuthActions.loginSuccess({ message: 'Logowanie zakończone sukcesem!' }));
       } else {
