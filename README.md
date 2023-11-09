@@ -1,27 +1,48 @@
-# HealthyLife
+/////////////// POLISH //////////////
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
 
-## Development server
+Aplikacja HealthyLife to aplikacja która zawiera w sobie:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Rejestracje,
+Logowanie, w których użyty jest Guard.
 
-## Code scaffolding
+Dodawanie produktów do koszyka, edycja ilości produktu czy usuwanie z koszyka.
+Przegląd różnych planów treningowych,
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+W aplikacji możemy dodać plan treningowy który nas interesuję, zmienić jego ilość, usunąć go czy przejść do podsumowania gdzie możemy zapłacić za pomocą Google Pay (wersja demo).
 
-## Build
+Jest również filtr danych planów które możemy zmieniać za pomocą przycisków.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+W aplikacji zostały użyte takie technologie jak:
+Angular,
+SASS,
+LocalStorage,
+RxJS,
+NgRX - gdzie w tym przypadku był to mój pierwszy projekt w którym używałem tej technologii.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Jest to mój pierwszy większy projekt który stworzyłem.
 
-## Running end-to-end tests
+/////////////// ENGLISH //////////////
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+HealthyLife is an application that includes:
 
-## Further help
+Registrations,
+Logins in which Guard is used.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Adding products to the cart, editing the quantity of the product or removing from the cart.
+Overview of different training plans,
+
+In the application we can add a training plan we are interested in, change its amount, delete it or go to the summary where we can pay with Google Pay (demo version).
+
+There is also a filter for the data of the plans that we can change with the buttons.
+
+
+The application uses such technologies as:
+Angular,
+SASS,
+LocalStorage,
+RxJS,
+NgRX - where in this case it was my first project in which I used this technology.
+
+This is my first larger project that I have created.
