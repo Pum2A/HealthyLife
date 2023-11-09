@@ -1,5 +1,6 @@
 /////////////// POLISH //////////////
 
+Link do strony demo: https://healtylife.netlify.app
 
 Aplikacja HealthyLife to aplikacja która zawiera w sobie:
 
@@ -24,6 +25,9 @@ NgRX - gdzie w tym przypadku był to mój pierwszy projekt w którym używałem 
 Jest to mój pierwszy większy projekt który stworzyłem.
 
 /////////////// ENGLISH //////////////
+
+Link to demo site: https://healtylife.netlify.app
+
 
 HealthyLife is an application that includes:
 
