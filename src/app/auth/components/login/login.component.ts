@@ -23,6 +23,7 @@ import { ActivatedRoute } from '@angular/router';
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <h2>Login in</h2>
 
+
         <label>Username</label>
           <input type="username" formControlName="username" placeholder="Username" [value]="demoCredentials.username" />
           <label>Password</label>
@@ -89,8 +90,10 @@ import { ActivatedRoute } from '@angular/router';
             </p>
             <p>
 
-              Email: demo@account.com
+           Email: demo&#64;account.com
             </p>
+            <p class="remember-text">Remember you need to register first yourself to use this app.</p>
+
           </div>
         </div>
 

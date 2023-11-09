@@ -1,8 +1,8 @@
 [
-  { "id": 1, "name": "30 days of Legs", "price": 30.32, "description": "A training plan focused on lower body exercises, targeting muscles in the legs and glutes. It includes a variety of strength and endurance exercises.",  "price": 22.50 },
-  { "id": 2, "name": "PUSH PULL LEGS", "price": 19.51, "description": "A training plan that emphasizes arm exercises, including biceps and triceps workouts. It helps in building arm strength and definition.", "price": 27.00 },
-  { "id": 3, "name": "flex DAY", "price": 53.20, "description": "A specialized training plan that focuses on developing bicep muscles. It includes various exercises to help build strong and well-defined biceps.", "price": 29.25 },
-  { "id": 4, "name": "FBW PLAN", "price": 60.50, "description": "A training plan that targets triceps exercises. The triceps make up a significant portion of the arm muscles, and this plan aids in strengthening them.", "price": 49.25 },
-  { "id": 5, "name": "7 days of ARMS", "price": 15.78, "description": "A training plan that concentrates on the development of back muscles. It includes a variety of exercises to increase back strength and stability.", "price": 19.25 },
-  { "id": 6, "name": "OLYMPIAN TRAINING SET", "price": 33.55, "description": "A training plan that focuses on enhancing chest muscles. It helps in building muscle mass and definition in the chest area.", "price": 39.25 }
+  { "id": 1, "name": "30 days\nof\nLEGS",  "description": "A training plan focused on lower body exercises, targeting muscles in the legs and glutes. It includes a variety of strength and endurance exercises.",  "price": 22.50, "category":"DAYS","qunatity": 0 },
+  { "id": 2, "name": "PUSH\nPULL\nLEGS","description": "A training plan that emphasizes arm exercises, including biceps and triceps workouts. It helps in building arm strength and definition.", "price": 27.00, "category":"LEGS","qunatity": 0 },
+  { "id": 3, "name": "flex\nDAY\nTRAINING", "description": "A specialized training plan that focuses on developing bicep muscles. It includes various exercises to help build strong and well-defined biceps.", "price": 29.25, "category":"DAYS","qunatity": 0 },
+  { "id": 4, "name": "FBW\nPLAN\nTRAINING",  "description": "A training plan that targets triceps exercises. The triceps make up a significant portion of the arm muscles, and this plan aids in strengthening them.", "price": 49.25, "category":"FBW","qunatity": 0 },
+  { "id": 5, "name": "7 days \nof\nARMS", "description": "A training plan that concentrates on the development of back muscles. It includes a variety of exercises to increase back strength and stability.", "price": 19.25, "category":"ARMS" ,"qunatity": 0  },
+  { "id": 6, "name": "OLYMPIAN\nSET\nTRAINING", "description": "A training plan that focuses on enhancing chest muscles. It helps in building muscle mass and definition in the chest area.", "price": 39.25, "category":"SET", "qunatity": 0 }
 ]

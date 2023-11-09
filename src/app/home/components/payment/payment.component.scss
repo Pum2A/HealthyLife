@@ -1,0 +1,96 @@
+@import '../../../../variables.scss';
+
+
+*{
+  color: #000;
+}
+
+p{
+  margin: 0;
+}
+.wrapper{
+  margin-top: 5rem;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+.wrapper-text{
+// gap: 1rem;
+padding: 3rem 0rem;
+border-bottom: 1px solid #000;
+
+}
+h2{
+  font-weight: 500;
+  font-size: 4rem;
+  text-align: center;
+  margin: 1rem 0rem;
+}
+.quantity-container span{
+  font-size: 1.5rem;
+  padding-left: 2rem;
+
+}
+.product-name{
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding-left: 2rem;
+
+}
+.product-amount{
+  font-size: 1.5rem;
+  padding-left: 2rem;
+
+}
+.payment-btn{
+  background-color: $main-second-theme-color;
+  min-width: 15rem;
+  min-height: 5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #fff;
+  &:hover{
+    background-color: $main-second-theme-color-darken;
+    transition: all 0.3s ease;
+  }
+
+}
+
+.total-price{
+  font-weight: 600;
+  font-size: 2rem;
+  // text-align: center;
+}
+.total-price-container{
+  // text-align: center;
+  // max-width: 50%;
+  margin: 2rem 0rem;
+  padding: 2rem 0rem;
+  display: FLEX;
+  justify-content: center;
+  align-items: center;
+  background-color: $hover-text-color;
+}
+.payment-container{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem 0rem;
+}
+google-pay-button{
+  margin: 1rem 0rem;
+text-align: center;
+}
+
+@media screen and (min-width: 800px){
+  .wrapper{
+    max-width: 120rem;
+    padding: 0rem 1rem;
+
+  }
+}

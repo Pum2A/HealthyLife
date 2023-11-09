@@ -1,5 +1,5 @@
 @import '../../../../variables.scss';
-
+@import "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round";
 .sidebar-container{
   // width: 25vw;
   height: 80vh;
@@ -7,13 +7,13 @@
   flex-direction: column;
   gap: 2rem;
   transition: all 0.3s ease;
-  background-color: $blocks-background-color;
+  background-color: $main-blocks-color;
   z-index: 100;
   position: absolute;
+  max-width: 35rem;
+  margin-inline: auto;
 
 
-
-  border: 1px solid #000;
   }
 .sidebar-container a{
   display: flex;
@@ -23,29 +23,31 @@
   font-size: 2.5rem;
   height:7.7rem;
   text-decoration: none;
-  color: #fff;
-  font-weight:200;
+  color: #000;
+  font-weight:400;
   width: 100%;
 
 
+
   &:hover{
-    background-color: #f4e9e9;
+    background-color: $third-blocks-color;
     color: #000;
   }
 
 }
 
 .sidebar-container a:last-child{
-  position: absolute;
-  bottom: 2rem;
+  // position: absolute;
+  // bottom: 2rem;
   width: 100%;
+cursor: pointer;
 
 }
 
 .sidebar-container a.active{
   width: 100%;
-  color: #000;
-  background-color: #f4e9e9;
+  color: #fff;
+  background: $main-second-theme-color;
   margin-left: 0;
   position: relative;
   transition: all 0.3s ease;
@@ -63,7 +65,7 @@
 }
 
 
-.sidebar-container a span{
+.sidebar-container a i{
   flex-grow: 1;
   white-space:nowrap;
   overflow: hidden;
@@ -88,7 +90,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #000;
   border-radius: 50%;
 
 }
@@ -99,33 +101,40 @@
 }
 
 .menu-btn-container{
-width:100% ;
-  height: 10rem;
-  background-color: $second-background-color;
-  // display: none;
+  height: 7rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  background-color: $main-header-background;
+  border-radius: 5rem;
   display: flex;
-  // justify-content: center;
-  justify-content: flex-end;
-  // justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  // margin: 3rem 0rem;
+  margin-top: 2rem;
+
 }
-.menu-btn-container span{
+.menu-btn-container i{
   padding: 1rem;
+  min-height: 6rem;
+  min-width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
   cursor: pointer;
-  color: #fff;
+  color: #000;
   margin-right: 2rem;
   border: 1px solid #1b1b1b;
-  transition: all 0.3 ease;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
   &:hover{
-    border: 1px solid #fff;
-    transition: all 0.3 ease;
+    border: 1px solid #000;
   }
 }
 
 .menu-btn-container nav{
-  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,24 +146,33 @@ ul,li{
 
 .menu-btn-container nav ul{
   display: flex;
-  font-size: 2rem;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  gap: 5rem;
+  font-weight: 400;
 
 }
 
 nav ul li  a.active{
-  padding: .8rem .3rem;
-  border-bottom: 4px solid $main-second-theme-color;
+  border-bottom: 3px solid $main-second-theme-color;
+  transition: all 0.1s ease;
+
 
 }
 .menu-btn-container nav ul li  a{
-  margin-left: 10rem;
   cursor: pointer;
+  padding: 1rem 2rem;
+  color: #000;
+  // border-radius: 1rem;
 
-  color: #fff;
-
+  transition: all 0.1s ease;
   &:hover{
-    color: $main-second-theme-color;
-    transition: all 0.3s ease;
+    background-color:$hover-text-color ;
+    // color: $main-second-theme-color;
+    transition: all 0.1s ease;
   }
 
 
@@ -166,15 +184,14 @@ nav ul li  a.active{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4rem;
-  font-weight: 700;
-  margin-left: 3rem;
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-left: 2rem;
   cursor: pointer;
-  color: #fff;
+  color: #000;
   transition: all 0.3s ease;
 
   &:hover{
-    color: $main-second-theme-color;
     transition: all 0.3s ease;
   }
 
@@ -185,18 +202,40 @@ nav ul li  a.active{
 }
 #shoppingCard{
   font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-@media screen and (min-width: 1200px){
+p{
+  margin: 0;
+}
+
+.logo-second-color{
+  color: #561bc5;
+}
+
+
+.items-count{
+  color: red;
+  margin-top: 0.4rem;
+}
+
+
+@media screen and (min-width: 1000px){
   // app-shopping-card{
   //   display: none;
   // }
+.logo{
+  margin-left: 2rem;
 
+}
 
   }
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 800px) {
   .sidebar-container{
     height: 83vh;
     width: 35vw;
@@ -219,11 +258,13 @@ nav ul li  a.active{
   .menu-btn-container{
     width: 100%;
     display: flex;
+    max-width: 40rem;
+    margin-top: 5rem;
     // justify-content: space-between;
     align-items: center;
     height: 8rem;
   }
-  .menu-btn-container span{
+  .menu-btn-container i{
     margin: 2rem 2rem;
   }
 
@@ -237,10 +278,10 @@ nav ul li  a.active{
 
   }
 
-  span{
+  i{
     font-size: 3rem;
   }
-  .menu-btn-container span {
+  .menu-btn-container i {
     display: inline-block;
     font-size: 2.5rem;
   }

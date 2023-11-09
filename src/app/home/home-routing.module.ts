@@ -5,9 +5,18 @@ import { OfferComponent } from './components/offer/offer.component';
 import { RulesComponent } from './components/rules/rules.component';
 import { AboutComponent } from './components/about/about.component';
 import { TrainingDetailsComponent } from './components/training-details/training-details.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { AuthRoutingModule } from '../auth/auth-routing.module';
+import { LoginComponent } from '../auth/components/login/login.component';
+import { RegisterComponent } from '../auth/components/register/register.component';
 
+const authRoutes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  // ... inne ścieżki dla autoryzacji
+];
 
-const routes: Routes = [
+const homeRoutes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'offer', component: OfferComponent
@@ -25,11 +34,15 @@ const routes: Routes = [
     path:'details/:type', component:TrainingDetailsComponent
   },
 
+  {
+path:'payment', component:PaymentComponent
+  },
+  ...authRoutes,
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(homeRoutes)],
   exports: [RouterModule],
 })
 export class HomeRoutingModule {}

@@ -1,57 +1,19 @@
 @import '../../../../variables.scss';
-// span{
-//   width: 100%;
-//   height: 10rem;
-//   background-color: red;
-//   font-size: 2rem;
-//   position: absolute;
-//   z-index: 1000;
-// }
 
+body,html {
+  height: 100%;
+}
 .container{
   position: absolute;
   width: 100%;
-  height: 20rem;
-  // margin-left: auto;
-  // background-color: red;
-  // display: flex;
-  // justify-content: flex-start;
-  // align-items: center;
-  // flex-direction: column;
-  // margin: 3rem 0rem;
-  // margin-left: auto;
+  height: 100%;
 
-}
-.container span{
-  // width: 100%;
-  display: none;
-  // margin-left: auto;
-  margin-right: 2rem;
 
-  font-size: 4rem;
-  background-color: $main-background-color;
-  padding: 1.5rem;
-  cursor: pointer;
-  color: #fff;
-  border-radius: 50%;
 
 
 }
 
-span{
-    // width: 100%;
-    display: none;
-    // margin-left: auto;
-    margin-top: 3rem;
-    margin-right: 2rem;
 
-    font-size: 4rem;
-    background-color: $main-background-color;
-    padding: 1.5rem;
-    cursor: pointer;
-    color: #fff;
-    border-radius: 50%;
-}
 
 
 
@@ -65,9 +27,19 @@ span{
 
 }
 .main-text-container p{
-  color: #fff;
+  color: #000;
   font-size: 2rem;
   font-weight: 100;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Kolor tła z efektem przezroczystości */
+  z-index: 1; /* Upewnij się, że tło jest na wierzchu */
+  cursor: pointer; /* Kursor wskazujący na to, że można kliknąć, aby zamknąć */
 }
 
 .header-text-container{
@@ -77,30 +49,29 @@ span{
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 .header-text-container p{
   font-size: 3.5rem;
-  color: #fff;
+  color: #000;
   font-weight: 400;
   line-height: 3.5rem;
 }
 
 .shopping-card-details-container{
-  margin-top: 9rem;
+  // margin-top: 9rem;
   min-width: 15rem;
   max-width: 40rem;
-  margin-right: 2rem;
-  border-radius: 3rem;
-  background-color: $blocks-background-color;
-  border: 1px solid #1b1b1b;
-  height: auto;
+  min-height: 100%;
+  // margin-right: 2rem;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   transition: all 0.3s ease;
   z-index: 100;
   margin-left: auto;
-  padding: 10rem 0rem;
+  // padding: 10rem 0rem;
 
 
 
@@ -118,7 +89,7 @@ span{
 
 .footer-text-container p {
   font-size: 3.5rem;
-  color: #fff;
+  color: #000;
   font-weight: 400;
   line-height: 3.5rem;
 
@@ -126,42 +97,116 @@ span{
 
 }
 
+.quantity-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.wrapper-text{
+  // max-width: 15rem;
+  // margin-inline: auto;
+}
+
+.wrapper{
+  max-width: 35rem;
+  margin-inline: auto;
+  padding: 0rem 1rem;
 
 
-button{
-  min-width: 15rem;
-  max-width: 20rem;
-  height: 4rem;
-  font-size: 1.5rem;
-  font-family: 'Source Sans 3', sans-serif;
-
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background-color: $blocks-background-color;
-  color: #e9e4e4;
-  transition: all 0.3s ease;
-  margin: 2rem 0rem;
-  border: 1px solid #1b1b1b;
-  border-radius: 1rem;
-
-  &:hover{
-    transition: all 0.3s ease;
-    color: #fff;
-    background-color: red;
-  box-sizing: 0px 0px 15px #fff;
-  }
+}
+.main-content{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
 }
 
 
-@media screen and (min-width: 1200px){
-  .container span{
-    display: inline-flex;
-  }
-  span{
+.content-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5rem;
+border-bottom: 1px solid gray;
+  min-width: 30rem;
+}
+.product-name{
+  font-size: 1.5rem;
+  line-height: 100%;
+  width: 100%;
+  font-weight: 600;
+  margin: .5rem 0rem;
 
-    display: inline-flex;
+
+  // display: block;
+
+}
+
+
+
+.content-box span {
+
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.quantity-container input {
+  min-width: 5rem;
+  max-width: 5rem;
+  height: 3rem;
+  outline: none;
+  border: 1px solid #000;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.remove-btn{
+  min-width: 7rem;
+  max-width: 7rem;
+  background-color: red;
+  outline: none;
+  border: 1px solid #fff;
+  height: 3rem;
+  color: #fff;
+  transition: all 0.3s ease;
+
+  &:hover{
+    background-color: rgb(146, 5, 5);
+    transition: all 0.3s ease;
   }
+
+  cursor: pointer;
+}
+
+.checkout-btn{
+  min-width:7rem;
+  max-width: 7rem;
+  background-color: rgb(31, 29, 29);
+  outline: none;
+  border: 1px solid #fff;
+  height: 3rem;
+  color: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 0rem 0rem 1rem 0rem;
+
+
+  &:hover{
+    transition: all 0.3s ease;
+  }
+
+}
+.buttons-container{
+display: flex;
+gap: 1rem;
+margin: 1rem 0rem;
+}
+
+.price-text{
+  margin: 1rem 0rem;
+}
+
+@media screen and (min-width: 1200px){
 
 
 
@@ -173,9 +218,7 @@ button{
     min-width: 100%;
     z-index: 1000;
   }
-  .shopping-card-details-container{
-    background-color: $blocks-background-color  ;
-  }
+
 
 
 

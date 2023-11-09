@@ -9,33 +9,33 @@ import {
 import { CartService } from '../../services/cart.service';
 import { Product } from '../../interfaces/product.interface';
 import { JsonDataService } from '../../services/json-data.service';
+import { ProductService } from '../../services/product.service';
+import { Router } from '@angular/router';
+import { Observable, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
   template: `
     <app-topbar> </app-topbar>
-    <!-- <app-sidebar></app-sidebar> -->
-    <!-- <div class="main-container-shopping-card"> -->
-
-    <!-- <app-shopping-card></app-shopping-card> -->
-    <!-- </div> -->
-    <div class="main-container">
-      <!-- <div class="h1-container">
-        <h1>HEALTHY</h1>
-        </div> -->
-      <div class="main-description-container">
-        <div class="left-site-container">
-          <h2>
-            <span>Biggest </span>
-            <span>Fitness </span>
-            <span>Community </span>
-          </h2>
-          <div class="btn-container">
-            <button>COMMUNITY</button>
-            <button>STAFF</button>
+    <div class="primary-header">
+      <div class="wrapper">
+        <div class="primary-header-content">
+          <div class="content-left">
+            <div class="content-text">
+            <p class="card-message" *ngIf="cardMessage">Added to card!
+              <button (click)="closeSuccessMessage()">X</button>
+            </p>
+              <h2>Biggest 🤾‍♀️</h2>
+              <h2>Fitness 🏋</h2>
+              <h2>Community 🌍</h2>
+              <div class="btn-container">
+                <button class="community-btn">COMMUNITY</button>
+                <button class="staff-btn">STAFF</button>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="right-site-container">
+
           <img
             class="main-image"
             src="../../../../assets/images/test.webp"
@@ -43,61 +43,89 @@ import { JsonDataService } from '../../services/json-data.service';
           />
         </div>
       </div>
+    </div>
+    <div class="reviews-section">
+      <div class="wrapper">
+        <div class="grid-columns">
 
-      <div class="offer-container">
-        <div class="left-site-container">
-          <p>
-            <span> Extremly </span>
-            <span> Customized </span>
-            <span> Workouts </span>
-          </p>
-          <div class="btn-container">
+          <div class="h3-container-block">
+            <img src="../../../../assets/images/./dollar.png"  alt="" class="block-icon">
+            <h3>Extra price</h3>
+          </div>
+          <div class="h3-container-block">
+            <img src="../../../../assets/images/./shield.png"  alt="" class="block-icon">
+            <h3>Ultimate Protect</h3>
+          </div>
+          <div class="h3-container-block">
+          <img src="../../../../assets/images/./support.png"  alt="" class="block-icon">
 
-            <button routerLink="/offer" [routerLinkActive]="'active'">
-              Check
-            </button>
+            <h3>24/7 Support</h3>
           </div>
         </div>
-        <div class="right-site-container"></div>
+        </div>
       </div>
-      <div class="main-text-container">
-        <div *ngFor="let element of data">
-          <div class="block-container">
-
-             <div [routerLink]="['/details', element.details]">
-
-               {{ element.block }}
-               <span [innerHTML]="element.information" class="{{element.details}}"></span>
-              </div>
-
-
-
-
-          </div>
-          <div class="description-container">
-            <a [routerLink]="['/details', element.details]">
-
-
-                Check
-
-
-              </a>
-              <p class="info-about-p">
-
-                to get more
-                <span class="span-block">
-
-                  info about
-                </span>
-            </p>
-          </div>
-          <div class="button-container">
-            <button (click)="addToCart(element)">Buy a workout</button>
-          </div>
+    <div class="second-header">
+      <div class="wrapper">
+        <h3>Extremly</h3>
+        <h3>Customized</h3>
+        <h3>Workouts</h3>
+        <div class="btn-container-second-wrapper">
+          <button
+            class="offer-btn"
+            routerLink="/offer"
+            [routerLinkActive]="'active'"
+          >
+            CHECK
+          </button>
         </div>
       </div>
     </div>
-    <app-footer></app-footer>
+
+    <div class="wrapper">
+      <div class="columns-title-h3">
+        <h3>Our sample offer</h3>
+        <div class="btn-container">
+        <button (click)="filterProductsByCategory('LEGS')" [ngClass]="{'active-button': selectedCategory === 'LEGS'}">LEGS</button>
+    <button (click)="filterProductsByCategory('FBW')" [ngClass]="{'active-button': selectedCategory === 'FBW'}">FBW</button>
+    <button (click)="filterProductsByCategory('ARMS')" [ngClass]="{'active-button': selectedCategory === 'ARMS'}">ARMS</button>
+    <button (click)="resetFilter()" [ngClass]="{'active-button': !selectedCategory}">ALL</button>
+        </div>
+      </div>
+      <div class="grid-even-columns">
+        <div class="block" *ngFor="let product of productList">
+          <div class="grid-text-all-elements">
+            <p
+              [innerHTML]="product.name"
+              class="grid-column-name"
+            ></p>
+
+          </div>
+          <div class="info-about-block">
+  <div class="a-grid-container">
+
+<a class="a-grid" [routerLink]="['/details', product.details]"> Click here! </a>
+</div>
+
+  <p class="info-about-p">Price is: <b>
+
+    {{product.price}}
+    $
+  </b>
+  per/month
+  </p>
+  <div class="btn-grid-container">
+
+    <button class="btn-grid" (click)="addToCard(product)" (click)="cardNofitication()">
+      Add to card
+    </button>
+  </div>
+  </div>
+</div>
+</div>
+
+      <app-footer></app-footer>
+
+    </div>
   `,
   styleUrls: ['./home.component.scss'],
 })
@@ -106,93 +134,140 @@ export class HomeComponent {
   constructor(
     private cartService: CartService,
     private JsonDataService: JsonDataService,
+    private product_service: ProductService,
+    private router: Router,
+    private http: HttpClient,
+
   ) {}
 
   isClicked = true;
   isMenuOpen = true;
+  productList!: any[];
+  products: any[] = [];
+  subTotal!: any;
+  messageTimeout: any;
+  cardMessage: boolean = false;
+  selectedCategory: string = '';
+  productsCount: number = 0;
+
+
+  filterProductsByCategory(category: string): void {
+    this.selectedCategory = category;
+    this.product_service.getAllProducts().subscribe({
+      next: (res: any) => {
+        this.productList = res.filter(product => product.category === category);
+      },
+      error: (error) => {
+        alert(error);
+      }
+    });
+  }
+
+  resetFilter(): void {
+    // Usuwa wybraną kategorię, przywracając wszystkie produkty
+    this.selectedCategory = '';
+    // Pobiera wszystkie produkty ponownie
+    this.product_service.getAllProducts().subscribe({
+      next: (res: any) => {
+        this.productList = res;
+      },
+      error: (error) => {
+        alert(error);
+      }
+    });
+  }
+
+  cardNofitication() {
+    this.cardMessage = true;
+    this.messageTimeout = setTimeout(() => {
+      this.closeSuccessMessage();
+    }, 2000);
+  }
+
+  closeSuccessMessage() {
+    this.cardMessage = false;
+  }
+
+
+
+  ngOnInit(): void {
+    this.product_service.getAllProducts().subscribe({
+      next: (res: any) => {
+        console.log(res);
+        this.productList = res
+        this.productsCount = this.productList.length + 1;
+      },
+      error: (error) => {
+        alert(error);
+      },
+      complete: () => {
+        console.log('Request Completed');
+      },
+
+     })
+
+
+
+     this.product_service.loadCart();
+     this.products = this.product_service.getProduct();
+
+
+
+
+
+  }
+
+
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  addToCart(product: Product): void {
-    const existingItem = this.cartService.getCartItem(product.id);
 
-    if (existingItem) {
-      existingItem.quantity++;
-      this.cartService.addToCart({
-        id: product.id,
-        product: product,
-        quantity: 1,
-      });
-    } else {
-      // Pobierz dane z lokalnego magazynu
-      const jsonData = JSON.parse(localStorage.getItem('offerData'));
-
-      // Znajdź odpowiednią nazwę ćwiczenia na podstawie ID
-      const exercise = jsonData.find((item) => item.id === product.id);
-
-      if (exercise) {
-        product.name = exercise.name;
-        this.cartService.addToCart({
-          id: product.id,
-          product: product,
-          quantity: 1,
-        });
-      }
+  addToCard(product: any) {
+    if(!this.product_service.productInCart(product)) {
+      product.quantity = 1;
+      this.product_service.addToCart(product);
+      this.products = [...this.product_service.getProduct()];
+      this.subTotal = product.price
     }
+
+
   }
 
-  removeFromCart(product: Product): void {
-    // Usuń produkt z koszyka
-    this.cartService.removeFromCart(product);
+  removeFromCart(product: any) {
+    this.product_service.removeProduct(product)
+    this.products = this.product_service.getProduct();
   }
 
 
 
+  changeSubTotal(product: any, index: any) {
 
-  data: any[] = [
-    {
-      id: 1,
-      photo: 'assets/images/legsPhoto.webp',
-      information: "30 days\nof\nLegs",
-      details: 'legs',
-      block: '',
-    },
-    {
-      id: 2,
-      photo: 'assets/images/armsPhoto.webp',
-      information: 'PUSH\nPULL\nLEGS',
-      details: 'arms',
-      block: '',
-    },
-    {
-      id: 3,
-      photo: 'assets/images/bicepsPhoto.webp',
-      information: 'flex\nDAY',
-      details: 'biceps',
-      block: '',
-    },
-    {
-      id: 4,
-      photo: 'assets/images/tricepsPhoto.webp',
-      information: 'FBW\nPLAN',
-      details: 'triceps',
-      block: '',
-    },
-    {
-      id: 5,
-      photo: 'assets/images/backPhoto.webp',
-      information: '7 days \nof\nARMS',
-      details: 'back',
-      block: '',
-    },
-    {
-      id: 6,
-      photo: 'assets/images/chestPhoto.webp',
-      information: 'OLYMPIAN\nTRAINING\nSET',
-      details: 'chest',
-      block: '',
-    },
-  ];
+    const qnt = product.quantity;
+    const amt = product.price;
+
+    this.subTotal = qnt * amt;
+
+    this.product_service.saveCart();
+
+  }
+
+  get total() {
+    return this.products?.reduce(
+      (sum, product) => ({
+        quantity: 1,
+        price: sum.price + product.quantity * product.price
+      }),
+      {qunatity: 1, price: 0}
+      ).price
+
+  }
+
+  checkout() {
+    localStorage.setItem('cart_total', JSON.stringify(this.total));
+    this.router.navigate(['/payment'])
+  }
+
+
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CartItem } from '../interfaces/cart.interface';
 import { Product } from '../interfaces/product.interface';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,8 +11,17 @@ export class CartService {
   private offerData: any[] = [];
 
   constructor() {
-    this.loadCartFromLocalStorage(); // Ładujemy dane z localStorage przy inicjalizacji serwisu
+    this.loadCartFromLocalStorage();
   }
+
+  private subject = new Subject<any>();
+  sendClickEvent() {
+    this.subject.next;
+  }
+  getClickEvent(): Observable<any>{
+    return this.subject.asObservable();
+  }
+
 
   setOfferData(data: any[]): void {
     this.offerData = data;
@@ -34,12 +44,12 @@ export class CartService {
     const existingItem = this.cart.find(cartItem => cartItem.id === item.id);
 
     if (existingItem) {
-      existingItem.quantity++; // Zwiększ ilość, jeśli produkt już istnieje w koszyku
+      existingItem.quantity++;
     } else {
-      this.cart.push(item); // Dodaj nowy produkt do koszyka
+      this.cart.push(item);
     }
 
-    this.saveCartToLocalStorage(); // Zapisz koszyk do localStorage po każdej zmianie
+    this.saveCartToLocalStorage();
   }
 
   getCartItem(planId: number): CartItem | undefined {
@@ -57,7 +67,7 @@ export class CartService {
       }
     }
 
-    this.saveCartToLocalStorage(); // Tutaj zapisujemy koszyk w localStorage po każdej zmianie
+    this.saveCartToLocalStorage();
   }
 
   getCart(): CartItem[] {

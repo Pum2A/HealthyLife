@@ -27,4 +27,5 @@ const routes: Routes = [
   ],
 
 })
-export class AuthRoutingModule {}
+export class AuthRoutingModule {
+}

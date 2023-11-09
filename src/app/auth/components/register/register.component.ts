@@ -83,8 +83,10 @@ import * as Actions from '../../store/actions';
           </p>
           <p>
 
-          Email: demo@account.com
+          Email:  demo&#64;account.com
           </p>
+          <p class="remember-text">Remember you need to register first yourself to use this app.</p>
+
           </div>
 
       </div>

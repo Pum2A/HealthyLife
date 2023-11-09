@@ -20,10 +20,12 @@ import { ShoppingCardComponent } from './home/components/shopping-card/shopping-
 import {  HttpClientModule } from '@angular/common/http';
 import { JsonDataService } from './home/services/json-data.service';
 import { FooterComponent } from './home/components/footer/footer.component';
+import { PaymentComponent } from './home/components/payment/payment.component';
+import { GooglePayButtonModule } from '@google-pay/button-angular';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, OfferComponent, RulesComponent, AboutComponent, TrainingDetailsComponent, TopbarComponent, ShoppingCardComponent, FooterComponent],
+  declarations: [AppComponent, HomeComponent, OfferComponent, RulesComponent, AboutComponent, TrainingDetailsComponent, TopbarComponent, ShoppingCardComponent, FooterComponent, PaymentComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -42,6 +44,7 @@ import { FooterComponent } from './home/components/footer/footer.component';
     BrowserAnimationsModule,
     NgOptimizedImage,
     HttpClientModule,
+    GooglePayButtonModule,
   ],
   providers: [JsonDataService],
   bootstrap: [AppComponent],
