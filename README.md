@@ -52,46 +52,22 @@ NgRX - where in this case it was my first project in which I used this technolog
 This is my first larger project that I have created.
 
 
+
+![image](https://github.com/Pum2A/HealthyLife/assets/95776599/a12b8e9c-77e6-4795-a307-675aa6d709ef)
+
+![image](https://github.com/Pum2A/HealthyLife/assets/95776599/a05a0a20-9d82-4e6f-a42e-e574f9044f52)
+
+![image](https://github.com/Pum2A/HealthyLife/assets/95776599/4d7513cc-51fd-4451-a7ae-f8d78cec38c0)
+
+![image](https://github.com/Pum2A/HealthyLife/assets/95776599/a0aa2d8c-b8ed-4949-869d-04bdd975e956)
+
+![image](https://github.com/Pum2A/HealthyLife/assets/95776599/511ac61f-f486-4773-bba9-c02a89840670)
+
+![image](https://github.com/Pum2A/HealthyLife/assets/95776599/184e7714-e7f7-4c80-83f6-b858c2ef984f)
+
 ![image](https://github.com/Pum2A/HealthyLife/assets/95776599/f2d20f10-ddb1-45ef-9264-d036d0d832d6)
 
 
-
-
-
-
-![image](https://github.com/Pum2A/HealthyLife/assets/95776599/e53b7f74-8d96-476b-b727-3afe5b13b0ba)
-
-
-
-![image](https://github.com/Pum2A/HealthyLife/assets/95776599/1460b884-3eb8-4668-8bfb-c5973abeb006)
-
-
-
-![image](https://github.com/Pum2A/HealthyLife/assets/95776599/6aad9352-7ede-4da4-99d8-bf31c36bdad8)
-
-
-
-![image](https://github.com/Pum2A/HealthyLife/assets/95776599/f7da5c1d-6cca-4819-97ee-8524d3bedde7)
-
-
-
-
-![image](https://github.com/Pum2A/HealthyLife/assets/95776599/69f7350b-18b3-43ab-953b-8868e838672b)
-
-
-
-
-![image](https://github.com/Pum2A/HealthyLife/assets/95776599/d419bc55-f1ba-4f89-a273-085a85701bba)
-
-
-
-
-![image](https://github.com/Pum2A/HealthyLife/assets/95776599/a182698b-a1a6-4d35-b09d-507e0e9c107e)
-
-
-
-
-![image](https://github.com/Pum2A/HealthyLife/assets/95776599/fa305354-e672-44d9-b166-b1555945a804)
 
 
 
