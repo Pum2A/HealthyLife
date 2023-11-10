@@ -71,13 +71,9 @@ img{
   margin-top: 10rem;
   width: 100%;
   display: flex;
-
   flex-direction: column;
-  // justify-content: space-between;
 }
-.columns-title-h3 .btn-container{
-  // width: 50%;
-}
+
 .columns-title-h3 .btn-container button{
   min-width: 5rem;
   margin: 2rem 2rem;
@@ -95,7 +91,7 @@ img{
   display: grid;
   grid-auto-rows: 1fr;
   gap: 1rem;
-  justify-items: stretch; /* Rozciąga elementy na szerokość kontenera */
+  justify-items: stretch;
   align-items: stretch;
   align-self: stretch;
   min-height: 500px;
@@ -131,7 +127,6 @@ h2,p{
 
 }
 .offer-description{
-  // align-self: flex-end;
   font-size: 1.5rem;
   line-height: 150%;
   font-weight: 400;
@@ -189,8 +184,6 @@ h2,p{
   border: none;
   border: 1px solid #000;
   outline: none;
-  // border: 1px solid #fff;
-  // color: #fff;
   font-size: 1.6rem;
   font-weight: 600;
   cursor: pointer;

@@ -63,7 +63,6 @@ export class AuthEffects {
         ofType(AuthActions.loginFailureAction),
         tap(action => {
           console.error('Login failure:', action.error);
-          // Możesz dodać logikę tutaj do wyświetlenia komunikatu błędu lub podejścia do obsługi błędu.
         })
       ),
     { dispatch: false }

@@ -5,10 +5,6 @@
 app-sidebar{
   position: absolute;
   width: 100%;
-  // top: 0;
-  // left: 0;
-  // z-index: 100;
-  // width: 0;
   display: none;
 }
 
@@ -23,16 +19,10 @@ app-shopping-card{
 }
 .main-container-shopping-card{
   display: none;
-  // display: flex;
   text-align: end;
 }
 
 
-.page-margin{
-  // margin: 0rem 5rem 0rem 5rem;
-
-
-}
 
 .main-container{
   width: 100%;
@@ -64,7 +54,6 @@ app-shopping-card{
   line-height: 5.5rem;
   text-align: justify;
   font-family: 'Source Sans 3', sans-serif;
-  // margin-left: 2.5rem;
 
   color: $main-text-color;
 }

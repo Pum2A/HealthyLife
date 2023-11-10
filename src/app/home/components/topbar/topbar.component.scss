@@ -17,9 +17,9 @@
   }
 .sidebar-container a{
   display: flex;
-  justify-content: center; /* Równa odległość między elementami */
+  justify-content: center;
   align-items: center;
-  padding: 0 3rem; /* Dodaj padding po obu stronach */
+  padding: 0 3rem;
   font-size: 2.5rem;
   height:7.7rem;
   text-decoration: none;
@@ -37,8 +37,6 @@
 }
 
 .sidebar-container a:last-child{
-  // position: absolute;
-  // bottom: 2rem;
   width: 100%;
 cursor: pointer;
 
@@ -73,13 +71,9 @@ cursor: pointer;
 }
 
 .close-btn-container{
-  // height: 10rem;
   width: 100%;
   display: flex;
   justify-content: center;
-  // align-items: center;
-
-
 }
 
 #close-btn{
@@ -166,12 +160,10 @@ nav ul li  a.active{
   cursor: pointer;
   padding: 1rem 2rem;
   color: #000;
-  // border-radius: 1rem;
 
   transition: all 0.1s ease;
   &:hover{
     background-color:$hover-text-color ;
-    // color: $main-second-theme-color;
     transition: all 0.1s ease;
   }
 
@@ -224,9 +216,7 @@ p{
 
 
 @media screen and (min-width: 1000px){
-  // app-shopping-card{
-  //   display: none;
-  // }
+
 .logo{
   margin-left: 2rem;
 
@@ -260,7 +250,6 @@ p{
     display: flex;
     max-width: 40rem;
     margin-top: 5rem;
-    // justify-content: space-between;
     align-items: center;
     height: 8rem;
   }
@@ -272,7 +261,7 @@ p{
 
   .sidebar-container a{
     font-size: 1.7rem;
-    padding: 0 1rem; /* Dodaj padding po obu stronach */
+    padding: 0 1rem;
     height:5.7rem;
 
 

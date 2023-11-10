@@ -6,7 +6,6 @@ import { State } from '@ngrx/store';
 import { LoginError } from '../interfaces/login-error.interface';
 
 export interface AuthState {
-  // Inne pola stanu autoryzacji
   registerError: RegisterError | null;
   registerButtonDisabled: boolean;
   loginError: LoginError | null;
@@ -14,7 +13,6 @@ export interface AuthState {
 }
 
 const initialState: AuthState = {
-  // Inicjalizacja innych pól stanu autoryzacji
   registerError: null,
   registerButtonDisabled: false,
   loginError: null,

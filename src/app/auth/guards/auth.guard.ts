@@ -14,12 +14,12 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    const storedUser = JSON.parse(localStorage.getItem('user')); // Użyj klucza 'user' zamiast 'token'
+    const storedUser = JSON.parse(localStorage.getItem('user'));
 
     console.log('Stored user:', storedUser);
     console.log('returnUrl:', state.url);
 
-    if (storedUser) { // Sprawdź, czy storedUser istnieje
+    if (storedUser) {
       return true;
     } else {
       console.log('Redirecting to login');

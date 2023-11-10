@@ -15,7 +15,6 @@ const routes: Routes = [
     component: HomeComponent,
   },
   { path: '', redirectTo: '/register', pathMatch: 'full' }
-  // { path: '**', redirectTo: '/register' },
 
 ];
 
